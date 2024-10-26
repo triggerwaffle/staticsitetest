@@ -1,0 +1,38 @@
+<nav x-data="{ open: false }" class="bg-blue-700 dark:bg-gray-900 shadow mb-10">
+
+    <div class="flex py-4 max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+        <button class="lg:hidden text-gray-100 hover:text-gray-300 rounded-md transition duration-150 ease-in-out mr-1" aria-label="Main menu" aria-expanded="false">
+
+            <svg @click="open = true" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+
+        </button>
+
+        <a href='#' class="text-sm text-white hover:text-gray-300">Logo</a>
+
+        <div class="flex flex-grow justify-between">
+
+                <div class="flex flex-grow justify-between">
+
+                    <div class="hidden lg:ml-6 lg:flex">
+                        <a href="#" class="ml-8 px-1 text-sm text-white hover:text-gray-300">Blog</a>
+                        <a href="#" class="ml-8 px-1 text-sm text-white hover:text-gray-300">About Me</a>
+                        <a href="#" class="ml-8 px-1 text-sm text-white hover:text-gray-300">Packages</a>
+                        <a href="#" class="ml-8 px-1 text-sm text-white hover:text-gray-300">Books</a>
+                        <a href="#" class="ml-8 px-1 text-sm text-white hover:text-gray-300">Contact</a>
+                    </div>
+
+                </div>
+
+            </div>
+    </div>
+
+    <div x-cloak x-show="open" @click.away="open = false">
+        <a href="#" class="block pl-3 py-2 font-medium text-white hover:text-gray-700 hover:bg-white">About Me</a>
+        <a href="#" class="block pl-3 py-2 font-medium text-white hover:text-gray-700 hover:bg-white">Packages</a>
+        <a href="#" class="block pl-3 py-2 font-medium text-white hover:text-gray-700 hover:bg-white">Books</a>
+        <a href="#" class="block pl-3 py-2 font-medium text-white hover:text-gray-700 hover:bg-white">Contact</a>
+    </div>
+
+</nav>

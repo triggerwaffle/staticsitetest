@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&display=swap');
 
+html[lang="ja"] {
+  font-family: "BIZ UDPGothic", sans-serif;
+}
+
 h2 {
     background-color : lightgray ;
 }

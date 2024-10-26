@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&display=swap');
 
-html[lang="ja"] {
+p[lang="ja"] {
   font-family: "BIZ UDPGothic", sans-serif;
 }
 

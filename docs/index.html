@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-  <link rel="stylesheet" type="text/css" href="https://triggerwaffle.github.io/staticsitetest/css/main.css" />
-  p {
-   color: #333333;
-   font-size: 1.5em;
-  }
-</style>
-</head>
-  <p>test</p>
-  <h2>h2</h2>
-test2xx
-</html>
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <!-- The link tag should be outside the style tag -->
+   <link rel="stylesheet" type="text/css" href="https://triggerwaffle.github.io/staticsitetest/css/main.css" />
+   <style>
+     p {
+       color: #333333;
+       font-size: 1.5em;
+     }
+   </style>
+ </head>
+ <body> <!-- The body tag was missing -->
+   <p>test</p>
+   <h2>h2</h2>
+   <!-- "test2xx" should be wrapped in a tag, like <p> or <div> -->
+   <p>test2xx</p>
+ </body>
+ </html>

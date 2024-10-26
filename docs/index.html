@@ -2,11 +2,7 @@
 <html lang="ja">
   <head>
     <!-- The link tag should be outside the style tag -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script
-      defer
-      src="https://unpkg.com/alpinejs-component@latest/dist/component.min.js"
-    ></script>
+    <script src="https://unpkg.com/@vimesh/style" defer></script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
@@ -28,7 +24,7 @@
     太字にするには &lt;b&gt; を用います。
     ダブルクォート(&quot;)やシングルクォート(&#39;)も文字参照を用いる必要があります。
     <p>test2xx</p>
-    <h1 class="text-3xl font-bold underline text-clifford">Hello world!</h1>
+    <h1 class="text-3xl font-bold underline text-red">Hello world!</h1>
 
     <!-- info Alert -->
     <div
@@ -237,36 +233,5 @@
       </div>
     </div>
 
-    <div
-      x-data="{
-    people: [
-      { name: 'John', age: '25', skills: ['JavaScript', 'CSS'] },
-      { name: 'Jane', age: '30', skills: ['Laravel', 'MySQL', 'jQuery'] }
-    ]
-  }"
-    >
-      <ul>
-        <template x-for="person in people">
-          <x-component
-            template="person"
-            x-data="{ item: person }"
-          ></x-component>
-        </template>
-      </ul>
-    </div>
-
-    <template id="person">
-      <li>
-        <h2 x-text="item.name" class="text-clifford"></h2>
-
-        <p x-text="item.age"></p>
-
-        <ul>
-          <template x-for="skill in item.skills">
-            <li x-text="skill"></li>
-          </template>
-        </ul>
-      </li>
-    </template>
   </body>
 </html>

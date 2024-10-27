@@ -4,18 +4,3 @@ html {
   font-family: "BIZ UDPGothic", sans-serif;
   scroll-behavior: smooth;
 }
-
- nav {
-   /* Set the default position for desktop sizes */
-   position: static; /* or you can use 'relative' if needed */
-   /* Add any additional default styles for the nav here */
- }
-
- @media (max-width: 768px) {
-   nav {
-     position: sticky;
-     top: 0;
-     z-index: 10;
-     /* Add any additional styles for the sticky nav on mobile here */
-   }
- }

@@ -1,0 +1,81 @@
+<template
+  x-component.unwrap="nobelgame1"
+  x-init="$api && $api.init()"
+  x-data="{data: {}}"
+>
+  <div class="max-w-xl mx-auto bg-white p-6 rounded shadow">
+    <div x-text="data.currentScene.text" class="mb-4"></div>
+    <div class="flex flex-col">
+      <template
+        x-for="(choice, index) in data.currentScene.choices"
+        :key="index"
+      >
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2"
+          x-text="choice.text"
+          @click="$api.makeChoice(choice.next)"
+        ></button>
+      </template>
+    </div>
+  </div>
+
+  <script>
+    return {
+      game() {
+        return {
+          scenes: {
+            start: {
+              text: "You wake up in a mysterious room. What do you do?",
+              choices: [
+                { text: "Explore the room", next: "explore" },
+                { text: "Go back to sleep", next: "sleep" },
+              ],
+            },
+            explore: {
+              text: "You found a hidden door. Do you open it?",
+              choices: [
+                { text: "Yes", next: "openDoor" },
+                { text: "No", next: "start" },
+              ],
+            },
+            sleep: {
+              text: "You went back to sleep and dreamt about a hidden door.",
+              choices: [
+                { text: "Wake up and explore", next: "explore" },
+                { text: "Keep sleeping", next: "end" },
+              ],
+            },
+            openDoor: {
+              text: "It's a library full of ancient books. Do you read one?",
+              choices: [
+                { text: "Yes", next: "readBook" },
+                { text: "No", next: "explore" },
+              ],
+            },
+            readBook: {
+              text: "The book is about a lost civilization. You feel enlightened.",
+              choices: [
+                { text: "Keep reading", next: "end" },
+                { text: "Put the book back", next: "openDoor" },
+              ],
+            },
+            end: {
+              text: "The dream fades away and you wake up for real. The end.",
+              choices: [],
+            },
+          },
+          currentScene: null,
+        };
+      },
+      init() {
+        this.data = this.game();
+        this.data.currentScene = this.data.scenes.start;
+      },
+      makeChoice(nextScene) {
+        if (nextScene in this.data.scenes) {
+          this.data.currentScene = this.data.scenes[nextScene];
+        }
+      },
+    };
+  </script>
+</template>

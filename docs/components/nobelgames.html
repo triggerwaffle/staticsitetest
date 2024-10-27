@@ -1,16 +1,17 @@
 <template
   x-component.unwrap="nobelgame1"
   x-init="$api && $api.init()"
-  x-data="{data: { currentScene: null }}"
+  x-data="{data: {}}"
 >
-  <div class="max-w-xl mx-auto bg-white p-6 rounded shadow">
-    <div x-text="data.currentScene.text" class="mb-4"></div>
+  <div x-show="data" class="max-w-xl mx-auto bg-white p-6 rounded shadow">
+    <div x-text="data?.currentScene?.text" class="mb-4"></div>
     <div class="flex flex-col">
       <template
-        x-for="(choice, index) in data.currentScene.choices"
+        x-for="(choice, index) in data?.currentScene?.choices"
         :key="index"
       >
         <button
+          x-show="data"
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2"
           x-text="choice.text"
           @click="$api.makeChoice(choice.next)"
@@ -39,7 +40,6 @@
               error,
             );
           });
-        console.log(this.data);
       },
       makeChoice(nextScene) {
         if (nextScene in this.data.scenes) {

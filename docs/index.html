@@ -159,13 +159,20 @@
         x-data="{filepath: './assets/data/nobelgame1.json',data:{}}"
       ></vui-nobelgame1>
     </div>
-    <hr class="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
-    <div x-data>
-      <div x-include.unwrap="./static/footer.html"></div>
-    </div>
 <details>
   <summary>HTMLって何の略？</summary>
   <p>「Hyper Text Markup Language」の略です。</p>
 </details>
+<input type="text" name="name" list="example">
+
+<datalist id="example">
+<option value="サンプル1"></option>
+<option value="サンプル2"></option>
+<option value="サンプル3"></option>
+</datalist>
+    <hr class="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
+    <div x-data>
+      <div x-include.unwrap="./static/footer.html"></div>
+    </div>
   </body>
 </html>

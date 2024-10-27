@@ -2,5 +2,6 @@
 
 html {
   font-family: "BIZ UDPGothic", sans-serif;
+  scroll-behavior: smooth;
 }
 

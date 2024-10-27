@@ -1,13 +1,46 @@
-<template x-component.unwrap="test1" :class="$prop('primary') ? 'text-red-500' : 'text-blue-500'" x-init="$api && $api.init()" title="Counter" owner-name="nobody">
-    <div>
-        <span x-text="$prop('title')"></span><br>
-        Owner: <span x-text="$prop('owner-name')"></span><br>
-        <slot></slot>
-    </div>
+<template
+  x-component.unwrap="test1"
+  :class="$prop('primary') ? 'text-red-500' : 'text-blue-500'"
+  x-init="$api && $api.init()"
+  title="Counter"
+  owner-name="nobody"
+>
+  <div>
+    <span x-text="$prop('title')"></span><br />
+    Owner: <span x-text="$prop('owner-name')"></span><br />
+    <slot></slot>
+  </div>
+  <script>
+    return {
+      init() {},
+    };
+  </script>
+</template>
+
+<template
+  x-component.unwrap="test2"
+  x-init="$api && $api.init()"
+  x-data="{ open: false}"
+>
+  <div>
+    <!-- @click は onclick の代わりだよ。クリックしたら open=true を代入する(開くよ)  -->
+    <button
+      @click="open = true"
+      x-text="open ? '開いてるよ' : 'クリックで開くよ'"
+    ></button>
+
+    <!-- x-show は 指定した変数や式が true なら、表示するよ -->
+    <span
+      x-show="open"
+      @click.away="open = false"
+      style="border: solid black 1px; padding: 10px"
+    >
+      開いたよ。この枠の外をクリックすると、閉じるよ。
+    </span>
     <script>
-        return {
-            init() {
-            },
-        }
+      return {
+        init() {},
+      };
     </script>
+  </div>
 </template>

@@ -141,16 +141,16 @@
       </div>
     </div>
 
-    <div x-import="counters">
-      <vui-counter
+    <div x-import="tests">
+      <vui-test1
         :primary="true"
         title="First primary"
         owner-name="test"
-      ></vui-counter>
-      <vui-counter
+      ></vui-test1>
+      <vui-test1
         owner-name="test secondary"
         :title="'name' + ' @ ' + $prop('owner-name')"
-      ></vui-counter>
+      ></vui-test1>
     </div>
     <hr class="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
     <div x-data>

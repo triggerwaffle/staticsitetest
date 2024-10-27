@@ -1,0 +1,13 @@
+<template x-component.unwrap="counter" :class="$prop('primary') ? 'text-red-500' : 'text-blue-500'" x-init="$api && $api.init()" title="Counter" owner-name="nobody">
+    <div>
+        <span x-text="$prop('title')"></span><br>
+        Owner: <span x-text="$prop('owner-name')"></span><br>
+        <slot></slot>
+    </div>
+    <script>
+        return {
+            init() {
+            },
+        }
+    </script>
+</template>

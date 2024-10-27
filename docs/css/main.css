@@ -5,11 +5,17 @@ html {
   scroll-behavior: smooth;
 }
 
-@media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
-  nav {
-    position: sticky;
-    top: 0; /* Adjust this value if you want some space from the top */
-    z-index: 10; /* Ensure the nav is above other content */
-    /* Add any additional styles for the sticky nav if needed */
-  }
-}
+ nav {
+   /* Set the default position for desktop sizes */
+   position: static; /* or you can use 'relative' if needed */
+   /* Add any additional default styles for the nav here */
+ }
+
+ @media (max-width: 768px) {
+   nav {
+     position: sticky;
+     top: 0;
+     z-index: 10;
+     /* Add any additional styles for the sticky nav on mobile here */
+   }
+ }

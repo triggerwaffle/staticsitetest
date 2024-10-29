@@ -1,1 +1,39 @@
+<template
+  x-component.unwrap="cardgroup1"
+  x-init="$api && $api.init()"
+  x-data="{filepath: './assets/data/pagelist.json',links: null}"
+>
+  <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2 p-4">
+    <template x-for="link in links" :key="link.url">
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-cyan-200 rounded flex p-4 h-full items-center">
+          <i class="fa-solid fa-check text-green-500"></i>
+          <a :href="link.url" x-text="link.title"></a>
+        </div>
+      </div>
+    </template>
+  </div>
 
+  <script>
+    return {
+      init() {
+        fetch(this.filepath)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            this.links = data.links;
+          })
+          .catch((error) => {
+            console.error(
+              "There has been a problem with your fetch operation:",
+              error,
+            );
+          });
+      },
+    };
+  </script>
+</template>

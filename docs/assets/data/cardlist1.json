@@ -3,26 +3,31 @@
      {
        "image": "./assets/images/face.png",
        "title": "Card Title 1",
+       "url": "#",
        "description": "This is a description for card 1."
      },
      {
        "image": "./assets/images/face.png",
        "title": "Card Title 2",
+       "url": "#",
        "description": "This is a description for card 2."
      },
      {
        "image": "./assets/images/face.png",
        "title": "Card Title 3",
+       "url": "#",
        "description": "This is a description for card 3."
      },
      {
        "image": "./assets/images/face.png",
        "title": "Card Title 4",
+       "url": "#",
        "description": "This is a description for card 4."
      },
      {
        "image": "./assets/images/face.png",
        "title": "Card Title 5",
+       "url": "#",
        "description": "This is a description for card 5."
      }
    ]

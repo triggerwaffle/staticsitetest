@@ -1,54 +1,35 @@
 <template
   x-component.unwrap="listgroup1"
   x-init="$api && $api.init()"
-  x-data="{filepath: '',data: null}"
+  x-data="{filepath: './assets/data/pagelist.json',links: null}"
 >
-<p>testlistgroup</p>
+  <div>
+    <template x-for="link in links" :key="link.url">
+      <a :href="link.url" x-text="link.title"></a>
+    </template>
+  </div>
 
 
-  <!-- <div x-show="data" class="max-w-xl mx-auto bg-white p-6 rounded shadow"> -->
-  <!--   <div x-text="data?.currentScene?.text" class="mb-4"></div> -->
-  <!--   <div class="flex flex-col"> -->
-  <!--     <template -->
-  <!--       x-for="(choice, index) in data?.currentScene?.choices" -->
-  <!--       :key="index" -->
-  <!--     > -->
-  <!--       <button -->
-  <!--         x-show="data" -->
-  <!--         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2" -->
-  <!--         x-text="choice.text" -->
-  <!--         @click="$api.makeChoice(choice.next)" -->
-  <!--       ></button> -->
-  <!--     </template> -->
-  <!--   </div> -->
-  <!-- </div> -->
-  <!---->
-  <!-- <script> -->
-  <!--   return { -->
-  <!--     init() { -->
-  <!--       fetch(this.filepath) -->
-  <!--         .then((response) => { -->
-  <!--           if (!response.ok) { -->
-  <!--             throw new Error("Network response was not ok"); -->
-  <!--           } -->
-  <!--           return response.json(); -->
-  <!--         }) -->
-  <!--         .then((gameData) => { -->
-  <!--           this.data = gameData; -->
-  <!--           this.data.currentScene = this.data.scenes.start; -->
-  <!--         }) -->
-  <!--         .catch((error) => { -->
-  <!--           console.error( -->
-  <!--             "There has been a problem with your fetch operation:", -->
-  <!--             error, -->
-  <!--           ); -->
-  <!--         }); -->
-  <!--     }, -->
-  <!--     makeChoice(nextScene) { -->
-  <!--       if (nextScene in this.data.scenes) { -->
-  <!--         this.data.currentScene = this.data.scenes[nextScene]; -->
-  <!--       } -->
-  <!--     }, -->
-  <!--   }; -->
-  <!-- </script> -->
+  <script>
+    return {
+      init() {
+        fetch(this.filepath)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            this.links = data.links;
+          })
+          .catch((error) => {
+            console.error(
+              "There has been a problem with your fetch operation:",
+              error,
+            );
+          });
+      },
+    };
+  </script>
 </template>

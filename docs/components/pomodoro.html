@@ -1,1 +1,90 @@
-
+<template x-component.unwrap="pomodoro" x-init="$api && $api.init()">
+<div class="bg-gray-100 flex items-center justify-center h-screen">
+   <div
+      x-data="pomodoroTimer()"
+      x-init="init()"
+      class="p-10 rounded shadow-lg bg-white pomodoro"
+    >
+      <h1 class="text-2xl font-bold mb-4">Pomodoro Timer</h1>
+      <div class="mb-4">
+        <span class="text-lg">Current Time: </span>
+        <span x-text="currentTime" class="text-lg font-semibold"></span>
+      </div>
+      <div class="mb-8">
+        <span class="text-lg">Timer: </span>
+        <span x-text="displayTime" class="text-lg font-semibold"></span>
+      </div>
+      <button
+        @click="startTimer"
+        class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
+      >
+        Start Work
+      </button>
+      <button
+        @click="startBreak"
+        class="px-4 py-2 ml-2 bg-green-500 text-white rounded hover:bg-green-700"
+      >
+        Start Break
+      </button>
+      <button
+        @click="resetTimer"
+        class="px-4 py-2 ml-2 bg-red-500 text-white rounded hover:bg-red-700"
+      >
+        Reset
+      </button>
+    </div>
+</div>
+    <script>
+     function pomodoroTimer() {
+        return {
+          currentTime: new Date().toLocaleTimeString(),
+          workTime: 25 * 60,
+          breakTime: 5 * 60,
+          timeLeft: 25 * 60,
+          timer: null,
+          displayTime: "25:00",
+          init() {
+            this.updateCurrentTime();
+            setInterval(() => {
+              this.$nextTick(() => {
+                this.updateCurrentTime();
+              });
+            }, 1000);
+          },
+          updateCurrentTime() {
+            this.currentTime = new Date().toLocaleTimeString();
+          },
+          startTimer() {
+            this.timeLeft = this.workTime;
+            this.updateTimer();
+          },
+          startBreak() {
+            this.timeLeft = this.breakTime;
+            this.updateTimer();
+          },
+          resetTimer() {
+            clearInterval(this.timer);
+            this.timeLeft = this.workTime;
+            this.displayTime = this.formatTime(this.timeLeft);
+          },
+          updateTimer() {
+            clearInterval(this.timer);
+            this.timer = setInterval(() => {
+              if (this.timeLeft > 0) {
+                this.timeLeft--;
+                this.displayTime = this.formatTime(this.timeLeft);
+              } else {
+                clearInterval(this.timer);
+                // Add any notification or alert here
+              }
+            }, 1000);
+          },
+          formatTime(seconds) {
+            let minutes = Math.floor(seconds / 60);
+            let remainingSeconds = seconds % 60;
+            return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
+          },
+        };
+      }
+    </script>
+</template>

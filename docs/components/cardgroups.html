@@ -1,7 +1,7 @@
 <template
   x-component.unwrap="cardgroup1"
   x-init="$api && $api.init()"
-  x-data="{filepath: './assets/data/pagelist.json',links: null}"
+  x-data="{filepath: '',links: null}"
 >
   <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2 p-4">
     <template x-for="link in links" :key="link.url">

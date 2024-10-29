@@ -6,7 +6,14 @@
     <meta name="googlebot" content="noindex,nofollow" />
     <title>test page</title>
     <link rel="icon" sizes="16x16" href="./favicon.ico" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <script src="https://unpkg.com/@vimesh/ui"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://unpkg.com/@vimesh/ui"></script>
     <script src="https://unpkg.com/@vimesh/style" defer></script>
     <script
       defer
@@ -20,12 +27,375 @@
     <div x-data>
       <div x-include.unwrap="./static/nav.html"></div>
     </div>
-    <div x-import="cardgroups">
-      <vui-cardgroup1
-        x-data="{filepath: './assets/data/cardlist1.json'}"
-      ></vui-cardgroup1>
+    <i class="fas fa-star"></i>
+    <!-- The body tag was missing -->
+    <p>test</p>
+    <h2>h2</h2>
+    <div id="d2"></div>
+    <!-- "test2xx" should be wrapped in a tag, like <p> or <div> -->
+    <p>
+      太字にするには &lt;b&gt; を用います。
+      ダブルクォート(&quot;)やシングルクォート(&#39;)も文字参照を用いる必要があります。
+    </p>
+    太字にするには &lt;b&gt; を用います。
+    ダブルクォート(&quot;)やシングルクォート(&#39;)も文字参照を用いる必要があります。
+    <p>test2xx</p>
+    <h1 class="text-3xl font-bold underline text-red">Hello world!</h1>
+
+    <article
+      class="group flex rounded-md max-w-sm flex-col overflow-hidden border border-neutral-300 bg-neutral-50 text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300"
+    >
+      <div class="h-44 md:h-64 overflow-hidden">
+        <img
+          src="https://penguinui.s3.amazonaws.com/component-assets/card-img-1.webp"
+          class="object-cover transition duration-700 ease-out group-hover:scale-105"
+          alt="a penguin robot talking with a human"
+        />
+      </div>
+      <div class="flex flex-col gap-4 p-6">
+        <span class="text-sm font-medium">Features</span>
+        <h3
+          class="text-balance text-xl lg:text-2xl font-bold text-neutral-900 dark:text-white"
+          aria-describedby="featureDescription"
+        >
+          Penguai can teach you Javascript
+        </h3>
+        <p id="featureDescription" class="text-pretty text-sm">
+          Learning JavaScript doesn't need to be difficult. Our penguin AI robot
+          can learn how much you know and will go at your speed. Although
+          Penguai is small, he's got a mighty big CPU.
+        </p>
+      </div>
+    </article>
+
+    <div x-import="greetings">
+      <vui-greeting>Vimesh UI</vui-greeting>
     </div>
-    <hr class="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
+    mytest
+    <div x-data>
+      <div
+        style="background-color: #888"
+        x-include.unwrap="./static/test.html"
+      ></div>
+    </div>
+
+    <div class="container mx-auto p-4">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <!-- Stat Card 1 -->
+        <div class="bg-white shadow rounded-lg p-4">
+          <div class="flex items-center">
+            <div class="flex-1">
+              <h4 class="text-lg font-semibold text-gray-700">Stat 1</h4>
+              <div class="text-sm text-gray-600">Description</div>
+            </div>
+            <div class="text-3xl font-bold text-indigo-600">42</div>
+          </div>
+        </div>
+        <!-- Stat Card 2 -->
+        <div class="bg-white shadow rounded-lg p-4">
+          <div class="flex items-center">
+            <div class="flex-1">
+              <h4 class="text-lg font-semibold text-gray-700">Stat 2</h4>
+              <div class="text-sm text-gray-600">Description</div>
+            </div>
+            <div class="text-3xl font-bold text-green-600">88</div>
+          </div>
+        </div>
+        <!-- Stat Card 3 -->
+        <div class="bg-white shadow rounded-lg p-4">
+          <div class="flex items-center">
+            <div class="flex-1">
+              <h4 class="text-lg font-semibold text-gray-700">Stat 3</h4>
+              <div class="text-sm text-gray-600">Description</div>
+            </div>
+            <div class="text-3xl font-bold text-blue-600">100</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mx-auto p-4">
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <!-- Stat Card 1 -->
+        <div class="bg-white shadow rounded-lg p-4">
+          <div class="flex items-center">
+            <div class="flex-1">
+              <h4 class="text-lg font-semibold text-gray-700">Stat 1</h4>
+              <div class="text-sm text-gray-600">Description</div>
+            </div>
+            <div class="text-3xl font-bold text-indigo-600">42</div>
+          </div>
+        </div>
+        <!-- Stat Card 2 -->
+        <div class="bg-white shadow rounded-lg p-4">
+          <div class="flex items-center">
+            <div class="flex-1">
+              <h4 class="text-lg font-semibold text-gray-700">Stat 2</h4>
+              <div class="text-sm text-gray-600">Description</div>
+            </div>
+            <div class="text-3xl font-bold text-green-600">88</div>
+          </div>
+        </div>
+        <!-- Stat Card 3 -->
+        <div class="bg-white shadow rounded-lg p-4">
+          <div class="flex items-center">
+            <div class="flex-1">
+              <h4 class="text-lg font-semibold text-gray-700">Stat 3</h4>
+              <div class="text-sm text-gray-600">Description</div>
+            </div>
+            <div class="text-3xl font-bold text-blue-600">100</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div x-import="ratings">
+      <vui-rating1 x-data="{currentVal: 4}"></vui-rating1>
+    </div>
+    <div x-import="tests">
+      <vui-test1
+        :primary="true"
+        title="First primary"
+        owner-name="test"
+      ></vui-test1>
+      <vui-test1
+        owner-name="test secondary"
+        :title="'name' + ' @ ' + $prop('owner-name')"
+      ></vui-test1>
+      <vui-test2 x-data="{open: false}"></vui-test2>
+    </div>
+    <div x-import="nobelgames">
+      <vui-nobelgame1
+        x-data="{filepath: './assets/data/nobelgame1.json'}"
+      ></vui-nobelgame1>
+    </div>
+    <details>
+      <summary>HTMLって何の略？</summary>
+      <p>「Hyper Text Markup Language」の略です。</p>
+    </details>
+    <input class="bg-gray-200" type="text" name="name" list="example" />
+
+    <datalist id="example">
+      <option value="サンプル1"></option>
+      <option value="サンプル2"></option>
+      <option value="サンプル3"></option>
+    </datalist>
+
+    <!--timeline -->
+
+    <ol class="border-s border-neutral-300 dark:border-neutral-500">
+      <!--First item-->
+      <li>
+        <div class="flex-start flex items-center pt-3">
+          <div
+            class="-ms-[5px] me-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500"
+          ></div>
+          <p class="text-sm text-neutral-500 dark:text-neutral-300">
+            01.07.2021
+          </p>
+        </div>
+        <div class="mb-6 ms-4 mt-2">
+          <h4 class="mb-1.5 text-xl font-semibold">Title of section 1</h4>
+          <p class="mb-3 text-neutral-500 dark:text-neutral-300">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+            scelerisque diam non nisi semper, et elementum lorem ornare.
+            Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales
+            vehicula.
+          </p>
+        </div>
+      </li>
+
+      <!--Second item-->
+      <li>
+        <div class="flex-start flex items-center pt-2">
+          <div
+            class="-ms-[5px] me-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500"
+          ></div>
+          <p class="text-sm text-neutral-500 dark:text-neutral-300">
+            13.09.2021
+          </p>
+        </div>
+        <div class="mb-6 ms-4 mt-2">
+          <h4 class="mb-1.5 text-xl font-semibold">Title of section 2</h4>
+          <p class="mb-3 text-neutral-500 dark:text-neutral-300">
+            Libero expedita explicabo eius fugiat quia aspernatur autem
+            laudantium error architecto recusandae natus sapiente sit nam eaque,
+            consectetur porro molestiae ipsam an deleniti.
+          </p>
+        </div>
+      </li>
+
+      <!--Third item-->
+      <li>
+        <div class="flex-start flex items-center pt-2">
+          <div
+            class="-ms-[5px] me-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500"
+          ></div>
+          <p class="text-sm text-neutral-500 dark:text-neutral-300">
+            25.11.2021
+          </p>
+        </div>
+        <div class="ms-4 mt-2 pb-5">
+          <h4 class="mb-1.5 text-xl font-semibold">Title of section 3</h4>
+          <p class="mb-3 text-neutral-500 dark:text-neutral-300">
+            Voluptatibus temporibus esse illum eum aspernatur, fugiat suscipit
+            natus! Eum corporis illum nihil officiis tempore. Excepturi illo
+            natus libero sit doloremque, laborum molestias rerum pariatur quam
+            ipsam necessitatibus incidunt, explicabo.
+          </p>
+        </div>
+      </li>
+    </ol>
+
+    <img
+      src="./assets/images/face.png"
+      class="w-32 rounded-full shadow-lg"
+      alt="Avatar"
+    />
+
+    <section>
+      <div
+        class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-7xl"
+      >
+        <div class="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3">
+          <div class="p-6 bg-gray-200">
+            <img
+              class="object-cover object-center w-full mb-8 lg:h-48 md:h-36 rounded-xl"
+              src="https://via.placeholder.com/150"
+              alt="blog"
+            />
+
+            <h1
+              class="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl"
+            >
+              Short headline.
+            </h1>
+            <p class="mx-auto text-base leading-relaxed text-gray-500">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div class="mt-4">
+              <a
+                href="#"
+                class="inline-flex items-center mt-4 font-semibold text-blue-600 lg:mb-0 hover:text-neutral-600"
+                title="read more"
+              >
+                Read More »
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <img
+              class="object-cover object-center w-full mb-8 lg:h-48 md:h-36 rounded-xl"
+              src="https://via.placeholder.com/150"
+              alt="blog"
+            />
+
+            <h1
+              class="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl"
+            >
+              Short headline.
+            </h1>
+            <p class="mx-auto text-base leading-relaxed text-gray-500">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div class="mt-4">
+              <a
+                href="#"
+                class="inline-flex items-center mt-4 font-semibold text-blue-600 lg:mb-0 hover:text-neutral-600"
+                title="read more"
+              >
+                Read More »
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <img
+              class="object-cover object-center w-full mb-8 lg:h-48 md:h-36 rounded-xl"
+              src="https://via.placeholder.com/150"
+              alt="blog"
+            />
+
+            <h1
+              class="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl"
+            >
+              Short headline.
+            </h1>
+            <p class="mx-auto text-base leading-relaxed text-gray-500">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div class="mt-4">
+              <a
+                href="#"
+                class="inline-flex items-center mt-4 font-semibold text-blue-600 lg:mb-0 hover:text-neutral-600"
+                title="read more"
+              >
+                Read More »
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2 p-4">
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <i class="fa-solid fa-check text-green-300"></i>
+          <span class="font-medium">Africa</span>
+        </div>
+      </div>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <i class="fa-solid fa-check text-green-300"></i>
+          <span class="font-medium">Antarctica</span>
+        </div>
+      </div>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <i class="fa-solid fa-check text-green-300"></i>
+          <span class="font-medium">Asia</span>
+        </div>
+      </div>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <i class="fa-solid fa-check text-green-300"></i>
+          <span class="font-medium">Australia (also known as Oceania)</span>
+        </div>
+      </div>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <i class="fa-solid fa-check text-green-300"></i>
+          <span class="font-medium">Europe</span>
+        </div>
+      </div>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <i class="fa-solid fa-check text-green-300"></i>
+          <span class="font-medium">North America</span>
+        </div>
+      </div>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <i class="fa-solid fa-check text-green-300"></i>
+          <span class="font-medium">South America</span>
+        </div>
+      </div>
+    </div>
+
+    <div x-import="pomodoros">
+      <vui-pomodoro>Vimesh UI</vui-pomodoro>
+    </div>
+
+    <hr class="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white-100" />
     <div x-data>
       <div x-include.unwrap="./static/footer.html"></div>
     </div>

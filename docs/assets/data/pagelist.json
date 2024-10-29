@@ -1,8 +1,8 @@
 {
   "links": [
     {
-      "url": "https://www.example.com",
-      "title": "Example Website"
+      "url": "./test.html",
+      "title": "test page"
     },
     {
       "url": "https://www.anotherexample.com",

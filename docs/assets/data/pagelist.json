@@ -11,6 +11,11 @@
     {
       "url": "./faq.html",
       "title": "faq page"
+    },
+   {
+      "url": "./cardgroupexample.html",
+      "title": "card group example page"
     }
+    
   ]
 }

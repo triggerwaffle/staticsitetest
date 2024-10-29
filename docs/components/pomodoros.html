@@ -1,7 +1,7 @@
 <template x-component.unwrap="pomodoro" x-init="$api && $api.init()">
-<div class="bg-gray-100 flex items-center justify-center h-screen">
-   <div
-      x-data="pomodoroTimer()"
+  <div class="bg-gray-100 flex items-center justify-center h-screen">
+    <div
+      x-data="$api.pomodoroTimer()"
       x-init="$api && $api.init()"
       class="p-10 rounded shadow-lg bg-white pomodoro"
     >
@@ -33,9 +33,11 @@
         Reset
       </button>
     </div>
-</div>
-    <script>
-     function pomodoroTimer() {
+  </div>
+  <script>
+    return {
+      init() {},
+      pomodoroTimer() {
         return {
           currentTime: new Date().toLocaleTimeString(),
           workTime: 25 * 60,
@@ -85,6 +87,7 @@
             return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
           },
         };
-      }
-    </script>
+      },
+    };
+  </script>
 </template>

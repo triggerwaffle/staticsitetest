@@ -1,7 +1,7 @@
 <template
   x-component.unwrap="nobelgame1"
   x-init="$api && $api.init()"
-  x-data="{filepath: ''}"
+  x-data="{filepath: '',data: {}}"
 >
   <div x-show="data" class="max-w-xl mx-auto bg-white p-6 rounded shadow">
     <div x-text="data?.currentScene?.text" class="mb-4"></div>

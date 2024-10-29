@@ -1,27 +1,27 @@
  {
    "cards": [
      {
-       "image": "https://example.com/sample-image.jpg",
+       "image": "./assets/images/face.png",
        "title": "Card Title 1",
        "description": "This is a description for card 1."
      },
      {
-       "image": "https://example.com/sample-image.jpg",
+       "image": "./assets/images/face.png",
        "title": "Card Title 2",
        "description": "This is a description for card 2."
      },
      {
-       "image": "https://example.com/sample-image.jpg",
+       "image": "./assets/images/face.png",
        "title": "Card Title 3",
        "description": "This is a description for card 3."
      },
      {
-       "image": "https://example.com/sample-image.jpg",
+       "image": "./assets/images/face.png",
        "title": "Card Title 4",
        "description": "This is a description for card 4."
      },
      {
-       "image": "https://example.com/sample-image.jpg",
+       "image": "./assets/images/face.png",
        "title": "Card Title 5",
        "description": "This is a description for card 5."
      }

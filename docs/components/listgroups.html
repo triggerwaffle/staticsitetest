@@ -3,12 +3,16 @@
   x-init="$api && $api.init()"
   x-data="{filepath: './assets/data/pagelist.json',links: null}"
 >
-  <div>
+  <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2 p-4">
     <template x-for="link in links" :key="link.url">
-      <a :href="link.url" x-text="link.title"></a>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <i class="fa-solid fa-check text-green-300"></i>
+          <a :href="link.url" x-text="link.title"></a>
+        </div>
+      </div>
     </template>
   </div>
-
 
   <script>
     return {

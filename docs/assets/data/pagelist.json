@@ -5,8 +5,12 @@
       "title": "test page"
     },
     {
-      "url": "https://www.anotherexample.com",
-      "title": "Another Example Website"
+      "url": "./resume.html",
+      "title": "resume page"
+    },
+    {
+      "url": "./faq.html",
+      "title": "faq page"
     }
   ]
 }

@@ -18,14 +18,14 @@
             class="absolute top-3 right-3 rounded-full bg-violet-600 text-gray-200 w-6 h-6 text-center"
           ></div>
           <div class="p-2 flex justify-center">
-            <a href="#">
+            <a :href="card.url">
               <img class="rounded-md" :src="card.image" loading="lazy" />
             </a>
           </div>
 
           <div class="px-4 pb-3">
             <div>
-              <a href="#">
+              <a :href="card.url">
                 <h5
                   class="text-xl font-semibold tracking-tight hover:text-violet-800 dark:hover:text-violet-300 text-gray-9 dark:text-white"
                   x-text="card.title"

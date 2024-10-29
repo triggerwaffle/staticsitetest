@@ -3,15 +3,45 @@
   x-init="$api && $api.init()"
   x-data="{filepath: '',cards: null}"
 >
-  <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2 p-4">
-    <template x-for="link in links" :key="link.url">
-      <div class="p-2 sm:w-1/2 w-full">
-        <div class="bg-cyan-200 rounded flex p-4 h-full items-center">
-          <i class="fa-solid fa-check text-green-500"></i>
-          <a :href="link.url" x-text="link.title"></a>
+  <div
+    class="h-full flex w-full justify-center items-center dark:bg-gray-800 p-2"
+  >
+    <div
+      class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4 md:p-2 xl:p-5"
+    >
+      <!-- card loop -->
+      <template x-for="card in cards" :key="card.title">
+        <div
+          class="relative bg-white border rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 transform transition duration-500 hover:scale-105"
+        >
+          <div
+            class="absolute top-3 right-3 rounded-full bg-violet-600 text-gray-200 w-6 h-6 text-center"
+            x-text="card.count"
+          ></div>
+          <div class="p-2 flex justify-center">
+            <a href="#">
+              <img class="rounded-md" :src="card.image" loading="lazy" />
+            </a>
+          </div>
+
+          <div class="px-4 pb-3">
+            <div>
+              <a href="#">
+                <h5
+                  class="text-xl font-semibold tracking-tight hover:text-violet-800 dark:hover:text-violet-300 text-gray-9 dark:text-white"
+                  x-text="card.title"
+                ></h5>
+              </a>
+
+              <p
+                class="antialiased text-gray-600 dark:text-gray-400 text-sm break-all"
+                x-text="card.description"
+              ></p>
+            </div>
+          </div>
         </div>
-      </div>
-    </template>
+      </template>
+    </div>
   </div>
 
   <script>

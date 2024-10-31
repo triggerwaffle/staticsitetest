@@ -1,56 +1,51 @@
- <nav
-    x-data="{ open: false }"
-    class="flex items-center justify-between bg-blue-700 fixed top-0 z-50 w-full"
- >
-    <!-- Hamburger Menu Button -->
-    <div class="flex items-center px-4"> <!-- Added padding for spacing -->
-      <button
-        @click="open = !open"
-        class="text-white hover:text-gray-300 transition duration-150 ease-in-out"
-        aria-label="Main menu"
-        :aria-expanded="open.toString()"
-      >
-        <!-- Use Tailwind CSS for the icon or replace with an SVG -->
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-      </button>
-    </div>
+ <nav class="flex items-center justify-between bg-blue-700 fixed top-0 z-50 w-full">
+   <!-- Hamburger Menu Button -->
+   <div class="p-4">
+     <button
+       @click="open = !open"
+       class="text-white hover:text-gray-300"
+       aria-label="Main menu"
+       aria-expanded="false"
+     >
+       <!-- Use TailwindCSS for the icon size -->
+       <svg class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+         <path d="M3 6h14M3 12h14M3 18h14" />
+       </svg>
+     </button>
+   </div>
 
-    <!-- Logo Centered -->
-    <div class="flex-grow flex justify-center px-4"> <!-- Added padding for spacing -->
-       <a href="#" class="block">
-           <img src="./logo.svg" class="h-8 w-8" alt="Home" />
-       </a>
-    </div>
+   <!-- Logo Centered -->
+   <div class="flex-grow flex justify-center">
+     <a href="#" class="block">
+       <img src="./logo.svg" class="h-8 w-8" alt="Home" />
+     </a>
+   </div>
 
-    <!-- Search Button on the Right -->
-    <div class="flex items-center px-4"> <!-- Added padding for spacing -->
-      <button
-        class="text-white hover:text-gray-300 transition duration-150 ease-in-out"
-        aria-label="Search"
-      >
-        <!-- Use Tailwind CSS for the icon or replace with an SVG -->
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10a4 4 0 114-4 4 4 0 01-4 4zm6 2a10 1
- 0 104-4" />
-        </svg>
-      </button>
-    </div>
+   <!-- Search Button on the Right -->
+   <div class="p-4">
+     <button
+       class="text-white hover:text-gray-300"
+       aria-label="Search"
+     >
+       <!-- Use TailwindCSS for the icon size -->
+       <svg class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+         <path d="M8 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM13 14l5 5" />
+       </svg>
+     </button>
+   </div>
 
-    <!-- Mobile Menu -->
-    <div
-      x-cloak
-      x-show="open"
-      @click.away="open = false"
-      class="absolute left-0 top-full bg-gray-500 w-full"
-      style="display: none;" <!-- This inline style is controlled by Alpine.js -->
-    >
-      <!-- Mobile menu links -->
-      test<br/>
-      test2<br/>
-      test3
-    </div>
+   <!-- Mobile Menu -->
+   <div
+     x-show="open"
+     @click.away="open = false"
+     class="absolute left-0 top-full bg-gray-500 w-full"
+     style="display: none;" <!-- Use inline style for x-cloak equivalent -->
+   >
+     <!-- Mobile menu links -->
+     test<br/>
+     test2<br/>
+     test3
+   </div>
  </nav>
 
  <!-- Spacer for mobile header -->

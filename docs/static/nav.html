@@ -2,10 +2,7 @@
      <div class="flex justify-start items-center py-4 max-w-7xl mx-auto lg:px-0">
          <!-- Button aligned to the left -->
          <div>
-             <button @click="open = !open" class="text-gray-100 hover:text-gray-300 rounded-md transition duration-150
- ease-in-out shadow-md" aria-label="Main menu" aria-expanded="false">
-                 <i class="fas fa-bars block h-6 w-6"></i>
-             </button>
+
          </div>
 
          <!-- Logo always visible -->
@@ -22,13 +19,7 @@
          </div>
      </div>
 
-     <!-- Mobile Menu -->
-     <div x-cloak x-show="open" @click.away="open = false" class="">
-         <a href="#" class="block pl-3 py-2 font-medium text-white hover:text-gray-700 hover:bg-white">About Me</a>
-         <a href="#" class="block pl-3 py-2 font-medium text-white hover:text-gray-700 hover:bg-white">Packages</a>
-         <a href="#" class="block pl-3 py-2 font-medium text-white hover:text-gray-700 hover:bg-white">Books</a>
-         <a href="#" class="block pl-3 py-2 font-medium text-white hover:text-gray-700 hover:bg-white">Contact</a>
-     </div>
+
  </nav>
 
 
@@ -36,26 +27,18 @@
 <nav class="flex flex-wrap items-center justify-between p-3 bg-teal-200/20 lg:static fixed top-0 z-50">
     <img src="./logo.svg" class="h-10 w-10" alt="" />
     <div class="flex md:hidden">
-        <button id="hamburger">
-          <img class="toggle block" src="https://img.icons8.com/fluent-systems-regular/2x/menu-squared-2.png" width="48" height="48" />
-          <img class="toggle hidden" src="https://img.icons8.com/fluent-systems-regular/2x/close-window.png" width="48" height="48" />
-        </button>
+                <button @click="open = !open" class="text-gray-100 hover:text-gray-300 rounded-md transition duration-150
+ ease-in-out shadow-md" aria-label="Main menu" aria-expanded="false">
+                 <i class="fas fa-bars block h-6 w-6"></i>
+             </button>
     </div>
-    <div
-        class="toggle hidden w-full md:w-auto md:flex text-right text-bold mt-5 md:mt-0 border-t-2 border-teal-900 md:border-none">
-        <a href="#"
-            class="block md:inline-block text-teal-900 hover:text-teal-500 px-3 py-3 border-b-2 border-teal-900 md:border-none">Home
-        </a>
-        <a href="#"
-            class="block md:inline-block text-teal-900 hover:text-teal-500 px-3 py-3 border-b-2 border-teal-900 md:border-none">Products
-        </a>
-        <a href="#"
-            class="block md:inline-block text-teal-900 hover:text-teal-500 px-3 py-3 border-b-2 border-teal-900 md:border-none">Pricing
-        </a>
-        <a href="#"
-            class="block md:inline-block text-teal-900 hover:text-teal-500 px-3 py-3 border-b-2 border-teal-900 md:border-none">Contact
-        </a>
-    </div>
+     <!-- Mobile Menu -->
+     <div x-cloak x-show="open" @click.away="open = false" class="">
+         <a href="#" class="block pl-3 py-2 font-medium text-white hover:text-gray-700 hover:bg-white">About Me</a>
+         <a href="#" class="block pl-3 py-2 font-medium text-white hover:text-gray-700 hover:bg-white">Packages</a>
+         <a href="#" class="block pl-3 py-2 font-medium text-white hover:text-gray-700 hover:bg-white">Books</a>
+         <a href="#" class="block pl-3 py-2 font-medium text-white hover:text-gray-700 hover:bg-white">Contact</a>
+     </div>
     <a href="#"
         class="toggle hidden md:flex w-full md:w-auto px-4 py-2 text-right bg-teal-900 hover:bg-teal-500 text-white md:rounded">Create
         Account

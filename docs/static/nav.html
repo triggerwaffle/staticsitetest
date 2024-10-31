@@ -1,65 +1,46 @@
-<nav
-  x-data="{ open: false }"
-  class="pt-2 flex items-center justify-between bg-blue-700 dark:bg-gray-900 fixed top-0 z-50 w-full"
->
-  <!-- Hamburger Menu Button -->
-  <div class="flex items-center">
-    <button
-      @click="open = !open"
-      class="text-gray-100 hover:text-gray-300 rounded-md transition duration-150 ease-in-out shadow-md"
-      aria-label="Main menu"
-      aria-expanded="false"
-    >
-      <i class="fas fa-bars block h-8 w-8"></i>
-    </button>
-  </div>
+ <nav
+   x-data="{ open: false }"
+   class="pt-2 flex items-center justify-between bg-blue-700 dark:bg-gray-900 fixed top-0 z-50 w-full"
+ >
+   <!-- Hamburger Menu Button -->
+   <div class="flex items-center"> <!-- Ensure this div is vertically centered -->
+     <button
+       @click="open = !open"
+       class="text-gray-100 hover:text-gray-300 rounded-md transition duration-150 ease-in-out shadow-md"
+       aria-label="Main menu"
+       aria-expanded="false"
+     >
+       <i class="fas fa-bars block h-8 w-8"></i> <!-- Adjust height if necessary -->
+     </button>
+   </div>
 
-  <!-- Logo Centered -->
-  <div class="flex-grow flex justify-center">
-     <a href="." class="inline-block"> <!-- Add this line -->
-         <img src="./logo.svg" class="h-8 w-8" alt="Home" />
-     </a> <!-- And this line -->
-  </div>
+   <!-- Logo Centered -->
+   <div class="flex-grow flex justify-center items-center"> <!-- Added items-center to vertically center the logo -->
+      <a href="." class="inline-block">
+          <img src="./logo.svg" class="h-8 w-8" alt="Home" /> <!-- Adjust height if necessary -->
+      </a>
+   </div>
 
-  <!-- Search Button on the Right -->
-  <div class="flex items-center">
-    <button
-      class="text-gray-100 hover:text-gray-300 rounded-md transition duration-150 ease-in-out shadow-md"
-      aria-label="Search"
-    >
-      <i class="fas fa-search block h-6 w-6"></i>
-    </button>
-  </div>
+   <!-- Search Button on the Right -->
+   <div class="flex items-center"> <!-- Ensure this div is vertically centered -->
+     <button
+       class="text-gray-100 hover:text-gray-300 rounded-md transition duration-150 ease-in-out shadow-md"
+       aria-label="Search"
+     >
+       <i class="fas fa-search block h-6 w-6"></i> <!-- Adjust height if necessary -->
+     </button>
+   </div>
 
-  <!-- Mobile Menu -->
-  <div
-    x-cloak
-    x-show="open"
-    @click.away="open = false"
-    class="absolute left-0 top-full bg-blue-700 w-full"
-  >
-    <a
-      href="#"
-      class="block pl-3 py-2 font-medium text-white hover:text-gray-700 hover:bg-white"
-      >About Me</a
-    >
-    <a
-      href="#"
-      class="block pl-3 py-2 font-medium text-white hover:text-gray-700 hover:bg-white"
-      >Packages</a
-    >
-    <a
-      href="#"
-      class="block pl-3 py-2 font-medium text-white hover:text-gray-700 hover:bg-white"
-      >Books</a
-    >
-    <a
-      href="#"
-      class="block pl-3 py-2 font-medium text-white hover:text-gray-700 hover:bg-white"
-      >Contact</a
-    >
-  </div>
-</nav>
+   <!-- Mobile Menu -->
+   <div
+     x-cloak
+     x-show="open"
+     @click.away="open = false"
+     class="absolute left-0 top-full bg-blue-700 w-full"
+   >
+     <!-- Mobile menu links -->
+   </div>
+ </nav>
 
-<!-- Spacer for mobile header -->
-<div class="pt-10 md:pt-10"></div>
+ <!-- Spacer for mobile header -->
+ <div class="pt-10 md:pt-10"></div>

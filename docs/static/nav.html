@@ -1,6 +1,6 @@
 <nav
   x-data="{ open: false }"
-  class="pt-1 flex items-center justify-between bg-blue-700 dark:bg-gray-900 fixed top-0 z-50 w-full"
+  class="pt-8 flex items-center justify-between bg-blue-700 dark:bg-gray-900 fixed top-0 z-50 w-full"
 >
   <!-- Hamburger Menu Button -->
   <div class="flex items-center">
@@ -16,7 +16,9 @@
 
   <!-- Logo Centered -->
   <div class="flex-grow flex justify-center">
-    <img src="./logo.svg" class="h-8 w-8" alt="" />
+     <a href="/" class="inline-block"> <!-- Add this line -->
+         <img src="./logo.svg" class="h-8 w-8" alt="Home" />
+     </a> <!-- And this line -->
   </div>
 
   <!-- Search Button on the Right -->

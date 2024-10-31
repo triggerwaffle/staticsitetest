@@ -1,48 +1,56 @@
  <nav
-   x-data="{ open: false }"
-   class="pt-2 flex items-center justify-between bg-blue-700 dark:bg-gray-900 fixed top-0 z-50 w-full"
+    x-data="{ open: false }"
+    class="flex items-center justify-between bg-blue-700 fixed top-0 z-50 w-full"
  >
-   <!-- Hamburger Menu Button -->
-   <div class="flex items-center"> <!-- Ensure this div is vertically centered -->
-     <button
-       @click="open = !open"
-       class="text-gray-100 hover:text-gray-300 rounded-md transition duration-150 ease-in-out shadow-md"
-       aria-label="Main menu"
-       aria-expanded="false"
-     >
-       <i class="fas fa-bars block h-8 w-8"></i> <!-- Adjust height if necessary -->
-     </button>
-   </div>
+    <!-- Hamburger Menu Button -->
+    <div class="flex items-center px-4"> <!-- Added padding for spacing -->
+      <button
+        @click="open = !open"
+        class="text-white hover:text-gray-300 transition duration-150 ease-in-out"
+        aria-label="Main menu"
+        :aria-expanded="open.toString()"
+      >
+        <!-- Use Tailwind CSS for the icon or replace with an SVG -->
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
 
-   <!-- Logo Centered -->
-   <div class="flex-grow flex justify-center items-center"> <!-- Added items-center to vertically center the logo -->
-      <a href="." class="inline-block">
-          <img src="./logo.svg" class="h-8 w-8" alt="Home" /> <!-- Adjust height if necessary -->
-      </a>
-   </div>
+    <!-- Logo Centered -->
+    <div class="flex-grow flex justify-center px-4"> <!-- Added padding for spacing -->
+       <a href="#" class="block">
+           <img src="./logo.svg" class="h-8 w-8" alt="Home" />
+       </a>
+    </div>
 
-   <!-- Search Button on the Right -->
-   <div class="flex items-center"> <!-- Ensure this div is vertically centered -->
-     <button
-       class="text-gray-100 hover:text-gray-300 rounded-md transition duration-150 ease-in-out shadow-md"
-       aria-label="Search"
-     >
-       <i class="fas fa-search block h-6 w-6"></i> <!-- Adjust height if necessary -->
-     </button>
-   </div>
+    <!-- Search Button on the Right -->
+    <div class="flex items-center px-4"> <!-- Added padding for spacing -->
+      <button
+        class="text-white hover:text-gray-300 transition duration-150 ease-in-out"
+        aria-label="Search"
+      >
+        <!-- Use Tailwind CSS for the icon or replace with an SVG -->
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10a4 4 0 114-4 4 4 0 01-4 4zm6 2a10 1
+ 0 104-4" />
+        </svg>
+      </button>
+    </div>
 
-   <!-- Mobile Menu -->
-   <div
-     x-cloak
-     x-show="open"
-     @click.away="open = false"
-     class="absolute left-0 top-full bg-blue-700 w-full"
-   >
-    test<br/>
-    test2<br/>
-    test3
-     <!-- Mobile menu links -->
-   </div>
+    <!-- Mobile Menu -->
+    <div
+      x-cloak
+      x-show="open"
+      @click.away="open = false"
+      class="absolute left-0 top-full bg-gray-500 w-full"
+      style="display: none;" <!-- This inline style is controlled by Alpine.js -->
+    >
+      <!-- Mobile menu links -->
+      test<br/>
+      test2<br/>
+      test3
+    </div>
  </nav>
 
  <!-- Spacer for mobile header -->

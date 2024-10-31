@@ -1,5 +1,5 @@
  <nav x-data="{ open: false }" class="bg-blue-700 dark:bg-gray-900 shadow mb-10 w-full lg:static fixed top-0 z-50">
-     <div class="flex justify-start items-center py-4 max-w-7xl mx-auto px-4 lg:px-0">
+     <div class="flex justify-between items-center py-4 max-w-7xl mx-auto lg:px-0">
          <!-- Button aligned to the left -->
          <div>
              <button @click="open = !open" class="text-gray-100 hover:text-gray-300 rounded-md transition duration-150
@@ -9,12 +9,17 @@
          </div>
 
          <!-- Logo centered -->
-         <div class="flex-grow text-center">
-             <a href='.' class="text-sm text-white hover:text-gray-300 lg:absolute lg:left-1/2 lg:transform
- lg:-translate-x-1/2">Logo</a>
+         <div class="hidden lg:flex lg:justify-center lg:flex-grow">
+             <a href='.' class="text-sm text-white hover:text-gray-300">Logo</a>
          </div>
 
-         <!-- Right placeholder removed -->
+         <!-- Search button on the right for large screens -->
+         <div class="ml-auto">
+             <button class="text-gray-100 hover:text-gray-300 rounded-md transition duration-150 ease-in-out"
+ aria-label="Search">
+                 <i class="fas fa-search block h-6 w-6"></i>
+             </button>
+         </div>
      </div>
 
      <!-- Mobile Menu -->

@@ -1,40 +1,38 @@
- <nav
-   x-data="{ open: false }"
-   class="pt-2 flex items-center justify-between bg-blue-700 dark:bg-gray-900 fixed top-0 z-50 w-full"
- >
+ <nav x-data="{ open: false }" class="pt-2 flex items-center justify-between bg-blue-700 dark:bg-gray-900 fixed top-0 z-50
+ w-full">
    <!-- Hamburger Menu Button -->
-   <div class="flex items-center"> <!-- Ensure this div is vertically centered -->
+   <div class="flex items-center">
      <button
        @click="open = !open"
+       :aria-expanded="open.toString()"
        class="text-gray-100 hover:text-gray-300 rounded-md transition duration-150 ease-in-out shadow-md"
        aria-label="Main menu"
-       aria-expanded="false"
      >
-       <i class="fas fa-bars block h-8 w-8"></i> <!-- Adjust height if necessary -->
+       <i class="fas fa-bars block h-8 w-8"></i>
      </button>
    </div>
 
    <!-- Logo Centered -->
-   <div class="flex-grow flex justify-center items-center"> <!-- Added items-center to vertically center the logo -->
-      <a href="." class="inline-block">
-          <img src="./logo.svg" class="h-8 w-8" alt="Home" /> <!-- Adjust height if necessary -->
-      </a>
+   <div class="flex-grow flex justify-center items-center">
+     <a href="." class="inline-block">
+       <img src="./logo.svg" class="h-8 w-8" alt="Home" />
+     </a>
    </div>
 
    <!-- Search Button on the Right -->
-   <div class="flex items-center"> <!-- Ensure this div is vertically centered -->
+   <div class="flex items-center">
      <button
        class="text-gray-100 hover:text-gray-300 rounded-md transition duration-150 ease-in-out shadow-md"
        aria-label="Search"
      >
-       <i class="fas fa-search block h-6 w-6"></i> <!-- Adjust height if necessary -->
+       <i class="fas fa-search block h-6 w-6"></i>
      </button>
    </div>
 
    <!-- Mobile Menu -->
    <div
      x-cloak
-     x-show="open"
+     x-show.transition="open"
      @click.away="open = false"
      class="absolute left-0 top-full bg-blue-700 w-full"
    >

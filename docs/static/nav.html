@@ -29,19 +29,20 @@
      </button>
    </div>
 
-   <!-- Mobile Menu -->
+   <!-- Sidebar -->
    <div
      x-cloak
      x-show="open"
      @click.away="open = false"
-     class="absolute left-0 top-full bg-blue-700 w-full"
+     class="fixed inset-y-0 left-0 transform bg-blue-700 w-64 transition duration-300 ease-in-out"
+     x-bind:class="{ '-translate-x-full': !open }"
    >
-     <!-- Mobile menu links -->
-     <div class="flex flex-col items-center py-4">
-       <a href="#a" class="text-white py-2">a</a>
-       <a href="#b" class="text-white py-2">b</a>
-       <a href="#c" class="text-white py-2">c</a>
-       <a href="#d" class="text-white py-2">d</a>
+     <!-- Sidebar links -->
+     <div class="flex flex-col p-4">
+       <a href="#a" class="mb-2">a</a>
+       <a href="#b" class="mb-2">b</a>
+       <a href="#c" class="mb-2">c</a>
+       <a href="#d" class="mb-2">d</a>
      </div>
    </div>
  </nav>

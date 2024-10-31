@@ -1,49 +1,49 @@
- <nav x-data="{ open: false }" class="pt-2 flex items-center justify-between bg-blue-700 dark:bg-gray-900 fixed top-0 z-50
- w-full">
+ <nav
+   x-data="{ open: false }"
+   class="bg-blue-700 dark:bg-gray-900 fixed top-0 z-50 w-full"
+ >
    <!-- Hamburger Menu Button -->
-   <div class="flex items-center">
+   <div class="absolute inset-y-0 left-0 flex items-center">
      <button
        @click="open = !open"
-       class="text-gray-100 hover:text-gray-300 rounded-md transition duration-150 ease-in-out shadow-md"
+       class="p-2 text-gray-100 hover:text-gray-300"
        aria-label="Main menu"
-       aria-expanded="false"
+       :aria-expanded="open.toString()"
      >
-       <i class="fas fa-bars block h-8 w-8"></i>
+       <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+       </svg>
      </button>
    </div>
 
    <!-- Logo Centered -->
-   <div class="flex-grow flex justify-center items-center">
-     <a href="." class="inline-block">
+   <div class="flex justify-center items-center h-12">
+     <a href="#" class="block">
        <img src="./logo.svg" class="h-8 w-8" alt="Home" />
      </a>
    </div>
 
    <!-- Search Button on the Right -->
-   <div class="flex items-center">
+   <div class="absolute inset-y-0 right-0 flex items-center">
      <button
-       class="text-gray-100 hover:text-gray-300 rounded-md transition duration-150 ease-in-out shadow-md"
+       class="p-2 text-gray-100 hover:text-gray-300"
        aria-label="Search"
      >
-       <i class="fas fa-search block h-6 w-6"></i>
+       <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10a4 4 0 114 4H8z" />
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h.01" />
+       </svg>
      </button>
    </div>
 
-   <!-- Sidebar -->
+   <!-- Mobile Menu -->
    <div
      x-cloak
      x-show="open"
      @click.away="open = false"
-     class="fixed inset-y-0 left-0 transform bg-blue-700 w-64 transition duration-300 ease-in-out"
-     x-bind:class="{ '-translate-x-full': !open }"
+     class="absolute left-0 top-full bg-gray-500 w-full"
    >
-     <!-- Sidebar links -->
-     <div class="flex flex-col p-4">
-       <a href="#a" class="mb-2">a</a>
-       <a href="#b" class="mb-2">b</a>
-       <a href="#c" class="mb-2">c</a>
-       <a href="#d" class="mb-2">d</a>
-     </div>
+     <!-- Mobile menu links -->
    </div>
  </nav>
 

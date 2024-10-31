@@ -1,19 +1,19 @@
 <nav x-data="{ open: false }" class="bg-blue-700 dark:bg-gray-900 shadow mb-10 w-full lg:static fixed top-0 z-50">
      <div class="flex justify-between items-center py-4 max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
-         <!-- Left placeholder for centering logo -->
+         <!-- Button always on the left -->
          <div>
              <button @click="open = !open" class="text-gray-100 hover:text-gray-300 rounded-md transition duration-150
- ease-in-out mr-1" aria-label="Main menu" aria-expanded="false">
+ ease-in-out" aria-label="Main menu" aria-expanded="false">
                  <i class="fas fa-bars block h-6 w-6"></i>
              </button>
          </div>
 
-         <!-- Logo centered -->
-         <a href='.' class="text-sm text-white hover:text-gray-300 lg:absolute lg:left-1/2 lg:transform
+         <!-- Logo centered only on large screens -->
+         <a href='.' class="hidden lg:block text-sm text-white hover:text-gray-300 lg:absolute lg:left-1/2 lg:transform
  lg:-translate-x-1/2">Logo</a>
 
-         <!-- Right placeholder for centering logo -->
-         <div class="">
+         <!-- Placeholder for centering logo on large screens, hidden on smaller screens -->
+         <div class="hidden lg:block">
              <button class="opacity-0 pointer-events-none">
                  <i class="fas fa-bars block h-6 w-6"></i>
              </button>

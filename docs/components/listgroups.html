@@ -5,12 +5,14 @@
 >
   <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2 p-4">
     <template x-for="link in links" :key="link.url">
-      <div class="p-2 sm:w-1/2 w-full">
-        <div class="bg-cyan-200 rounded flex p-4 h-full items-center">
-          <i class="fa-solid fa-check text-green-500"></i>
-          <a :href="link.url" x-text="link.title"></a>
-        </div>
-      </div>
+       <!-- Wrap the div with an anchor tag -->
+       <a :href="link.url" class="p-2 sm:w-1/2 w-full">
+         <div class="bg-blue-200 rounded flex p-4 h-full items-center hover:bg-blue-300">
+           <i class="fa-solid fa-check text-green-500"></i>
+           <!-- Add underline to the text -->
+           <span class="underline ml-2" x-text="link.title"></span>
+         </div>
+       </a>
     </template>
   </div>
 

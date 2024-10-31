@@ -1,41 +1,59 @@
- <nav class="flex items-center justify-between bg-blue-700 fixed top-0 z-50 w-full p-2" x-data="{ open: false }">
-    <!-- Hamburger Menu Button -->
-    <div class="flex items-center">
-      <button
-        @click="open = !open"
-        class="text-gray-100 hover:text-gray-300 p-2"
-        aria-label="Main menu"
-      >
-        <!-- Hamburger Icon -->
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-      </button>
-    </div>
+ <!-- Alpine.js initialization for the open state -->
+ <div x-data="{ open: false }">
+   <nav class="flex items-center justify-between bg-blue-700 fixed top-0 z-50 w-full p-2">
+     <!-- Hamburger Menu Button -->
+     <div class="flex items-center">
+       <button
+         @click="open = !open"
+         class="text-gray-100 hover:text-gray-300 p-2"
+         aria-label="Main menu"
+       >
+         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+         </svg>
+       </button>
+     </div>
 
-    <!-- ... rest of your nav code ... -->
+     <!-- Logo Centered -->
+     <div class="flex-grow flex justify-center items-center">
+       <a href="#" class="block">
+         <img src="./logo.svg" class="h-8 w-8" alt="Home" />
+       </a>
+     </div>
 
- </nav>
+     <!-- Search Button on the Right -->
+     <div class="flex items-center">
+       <button
+         class="text-gray-100 hover:text-gray-300 p-2"
+         aria-label="Search"
+       >
+         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10a4 4 0 114 4H8z" />
+         </svg>
+       </button>
+     </div>
+   </nav>
 
- <!-- Mobile Menu -->
- <div
-    x-show="open"
-    @click.away="open = false"
-    class="absolute left-0 top-0 mt-14 bg-gray-300 w-full z-40"
-    x-transition:enter="transition ease-out duration-200"
-    x-transition:enter-start="opacity-0 transform scale-95"
-    x-transition:enter-end="opacity-100 transform scale-100"
-    x-transition:leave="transition ease-in duration-75"
-    x-transition:leave-start="opacity-100 transform scale-100"
-    x-transition:leave-end="opacity-0 transform scale-95"
- >
-    <!-- Mobile menu links -->
-    <div class="p-4">
-      test<br/>
-      test2<br/>
-      test3
-    </div>
+   <!-- Mobile Menu -->
+   <div
+     x-show="open"
+     @click.away="open = false"
+     class="absolute left-0 top-0 mt-14 bg-gray-300 w-full z-40"
+     x-transition:enter="transition ease-out duration-200"
+     x-transition:enter-start="opacity-0 transform scale-95"
+     x-transition:enter-end="opacity-100 transform scale-100"
+     x-transition:leave="transition ease-in duration-75"
+     x-transition:leave-start="opacity-100 transform scale-100"
+     x-transition:leave-end="opacity-0 transform scale-95"
+   >
+     <!-- Mobile menu links -->
+     <div class="p-4">
+       test<br/>
+       test2<br/>
+       test3
+     </div>
+   </div>
+
+   <!-- Spacer for mobile header -->
+   <div class="pt-10 md:pt-10"></div>
  </div>
-
- <!-- Spacer for mobile header -->
- <div class="pt-10 md:pt-10"></div>

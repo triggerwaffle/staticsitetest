@@ -1,38 +1,33 @@
  <nav
    x-data="{ open: false }"
-   class="bg-blue-700 dark:bg-gray-900 fixed top-0 z-50 w-full"
+   class="pt-2 flex items-center justify-between bg-blue-700 dark:bg-gray-900 fixed top-0 z-50 w-full"
  >
    <!-- Hamburger Menu Button -->
-   <div class="absolute inset-y-0 left-0 flex items-center">
+   <div class="flex items-center"> <!-- Ensure this div is vertically centered -->
      <button
        @click="open = !open"
-       class="p-2 text-gray-100 hover:text-gray-300"
+       class="text-gray-100 hover:text-gray-300 rounded-md transition duration-150 ease-in-out shadow-md"
        aria-label="Main menu"
-       :aria-expanded="open.toString()"
+       aria-expanded="false"
      >
-       <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-       </svg>
+       <i class="fas fa-bars block h-8 w-8"></i> <!-- Adjust height if necessary -->
      </button>
    </div>
 
    <!-- Logo Centered -->
-   <div class="flex justify-center items-center h-12">
-     <a href="#" class="block">
-       <img src="./logo.svg" class="h-8 w-8" alt="Home" />
-     </a>
+   <div class="flex-grow flex justify-center items-center"> <!-- Added items-center to vertically center the logo -->
+      <a href="." class="inline-block">
+          <img src="./logo.svg" class="h-8 w-8" alt="Home" /> <!-- Adjust height if necessary -->
+      </a>
    </div>
 
    <!-- Search Button on the Right -->
-   <div class="absolute inset-y-0 right-0 flex items-center">
+   <div class="flex items-center"> <!-- Ensure this div is vertically centered -->
      <button
-       class="p-2 text-gray-100 hover:text-gray-300"
+       class="text-gray-100 hover:text-gray-300 rounded-md transition duration-150 ease-in-out shadow-md"
        aria-label="Search"
      >
-       <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10a4 4 0 114 4H8z" />
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h.01" />
-       </svg>
+       <i class="fas fa-search block h-6 w-6"></i> <!-- Adjust height if necessary -->
      </button>
    </div>
 
@@ -41,7 +36,7 @@
      x-cloak
      x-show="open"
      @click.away="open = false"
-     class="absolute left-0 top-full bg-gray-500 w-full"
+     class="absolute left-0 top-full bg-blue-700 w-full"
    >
      <!-- Mobile menu links -->
    </div>

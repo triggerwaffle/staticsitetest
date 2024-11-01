@@ -42,8 +42,10 @@
      x-transition:leave-end="opacity-0 transform scale-95"
    >
      <!-- Mobile menu links -->
-     <div class="p-4">
-
+     <div class="p-4" x-import="listgroups">
+      <vui-listgroup1
+        x-data="{filepath: './assets/data/pagelist.json'}"
+      ></vui-listgroup1>
      </div>
    </div>
 

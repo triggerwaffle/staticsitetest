@@ -8,7 +8,7 @@
     @click="window.scrollTo({ top: 0, behavior: 'smooth' }); atTop = true;"
     :class="{
       'bg-blue text-white': atTop,
-      'bg-white hover:bg-white text-blue-700 hover:text-white': !atTop
+      'bg-white hover:bg-white text-blue-700 hover:text-blue-700': !atTop
     }"
     class="fixed font-bold py-2 px-4 rounded-full cursor-pointer z-50"
     style="display: none;"

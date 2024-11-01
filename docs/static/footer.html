@@ -1,15 +1,17 @@
  <div
-    x-data="{ showButton: false }"
+    x-data="{ showButton: false, atTop: true }"
     x-init="window.addEventListener('scroll', () => {
-      showButton = window.scrollY > 100
+      showButton = window.scrollY > 100;
+      atTop = window.scrollY === 0;
     })"
     x-show="showButton"
-    @click="window.scrollTo({ top: 0, behavior: 'smooth' }); $el.classList.remove('bg-blue-700');
- $el.classList.add('bg-white')"
-    @mouseenter="$el.classList.remove('bg-white'); $el.classList.add('bg-blue-700')"
-    @mouseleave="$el.classList.remove('bg-blue-700'); $el.classList.add('bg-white')"
-    class="fixed bottom-4 right-4 bg-white text-blue font-bold py-2 px-4 rounded-full cursor-pointer z-50"
-    style="display: none; width: 50px; height: 50px; border-radius: 9999px;"
+    @click="window.scrollTo({ top: 0, behavior: 'smooth' }); atTop = true;"
+    :class="{
+      'bg-white text-blue': atTop,
+      'bg-blue-700 hover:bg-blue-700 text-white hover:text-gray-300': !atTop
+    }"
+    class="fixed bottom-4 right-4 font-bold py-2 px-4 rounded-full cursor-pointer z-50"
+    style="display: none;"
  >
  <i class="fa-solid fa-arrow-up"></i>
  </div>

@@ -26,8 +26,16 @@
     <script defer src="./js/main_defer.js"></script>
   </head>
   <body>
+ <script>
+   function loadScript() {
+     var script = document.createElement('script');
+     script.defer = true;
+     script.src = 'https://unpkg.com/alpinejs-head@lates/dist/head.min.js';
+     document.head.appendChild(script);
+   }
+ </script>
     <div x-data>
-      <div x-include.unwrap="./static/alpinejshead.html"></div>
+      <div x-include.unwrap="./static/alpinejshead.html" x-init="loadScript()"></div>
       <div x-include.unwrap="./static/nav.html"></div>
       <div x-include.unwrap="./static/404.html"></div>
       <div x-include.unwrap="./static/footer.html"></div>

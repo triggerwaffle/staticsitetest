@@ -26,8 +26,12 @@
     <script defer src="./js/main_defer.js"></script>
   </head>
   <body>
- <script>
+ <script x-data>
+ document.addEventListener('DOMContentLoaded', (event) => {
+$head('title', 'How are you today?')
+ });
 
+   
  </script>
     <div x-data>
       <div x-include.unwrap="./static/alpinejshead.html"></div>

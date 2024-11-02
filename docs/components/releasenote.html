@@ -3,18 +3,30 @@
   x-init="$api && $api.init()"
   x-data="{filepath: '',updates: null}"
 >
-  <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2 p-4">
-    <template x-for="link in links" :key="up.url">
-       <!-- Wrap the div with an anchor tag -->
-       <a :href="link.url" class="p-2 sm:w-1/2 w-full">
-         <div class="bg-blue-200 rounded-lg flex p-4 h-full items-center hover:bg-blue-300">
-                  <i class="fa-solid fa-check text-green-500"></i>
-           <!-- Add underline to the text -->
-           <span class="underline text-cyan-800 ml-2" x-text="link.title"></span>
-         </div>
-       </a>
-    </template>
-  </div>
+ <div x-data="{ updates: [{ date: '2023-04-01', category: 'News', description: 'Update description here...' },{ date: '2023-04-02', category: 'News', description: 'Update description here...' },{ date: '2023-04-03', category: 'News', description: 'Update description here...' }] }">
+   <div class="overflow-x-auto">
+     <table class="min-w-full bg-white divide-y divide-gray-200">
+       <tbody class="divide-y divide-gray-200">
+         <template x-for="(update, index) in updates" :key="update.date">
+           <tr class="bg-gray-50 hover:bg-gray-100" x-bind:class="{ 'bg-gray-100': index % 2 === 1 }">
+             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+               <div class="flex items-center">
+                 <div class="flex-shrink-0">
+                   <span class="inline-block px-2 py-1 text-xs font-semibold leading-none text-green-800 bg-green-200
+ rounded-full" x-text="update.category"></span>
+                 </div>
+                 <div class="ml-4">
+                   <div class="text-sm font-medium text-gray-900" x-text="update.date"></div>
+                   <div class="text-sm text-gray-500" x-text="update.description"></div>
+                 </div>
+               </div>
+             </td>
+           </tr>
+         </template>
+       </tbody>
+     </table>
+   </div>
+ </div>
 
   <script>
     return {

@@ -1,8 +1,15 @@
 <template
    x-component.unwrap="paramtest"
    x-init="$api && $api.init()"
-   x-data="{ }"
+   x-data="{}"
    >
+  <!-- パラメータを表示 -->
+  <template x-for="(value, key) in params" :key="key">
+    <div>
+      <span x-text="sanitize(key)"></span>:
+      <span x-text="sanitize(value)"></span>
+    </div>
+  </template>
    <script>
     return {
       params: {},

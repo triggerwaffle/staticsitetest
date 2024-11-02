@@ -6,8 +6,8 @@
   <!-- パラメータを表示 -->
   <template x-for="(value, key) in params" :key="key">
     <div>
-      <span x-text="sanitize(key)"></span>:
-      <span x-text="sanitize(value)"></span>
+      <span x-text="$api.sanitize(key)"></span>:
+      <span x-text="$api.sanitize(value)"></span>
     </div>
   </template>
    <script>
@@ -19,8 +19,8 @@
         const urlParams = new URLSearchParams(queryString);
 
         urlParams.forEach((value, key) => {
-          key = $api.sanitize(key);
-          value = $api.sanitize(value);
+          key = sanitize(key);
+          value = sanitize(value);
           if (key.endsWith("[]")) {
             key = key.slice(0, -2); // '[]'を取り除く
             if (!this.params.hasOwnProperty(key)) {

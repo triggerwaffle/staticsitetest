@@ -1,0 +1,41 @@
+<template
+  x-component.unwrap="updategroup1"
+  x-init="$api && $api.init()"
+  x-data="{filepath: '',updates: null}"
+>
+  <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2 p-4">
+    <template x-for="link in links" :key="up.url">
+       <!-- Wrap the div with an anchor tag -->
+       <a :href="link.url" class="p-2 sm:w-1/2 w-full">
+         <div class="bg-blue-200 rounded-lg flex p-4 h-full items-center hover:bg-blue-300">
+                  <i class="fa-solid fa-check text-green-500"></i>
+           <!-- Add underline to the text -->
+           <span class="underline text-cyan-800 ml-2" x-text="link.title"></span>
+         </div>
+       </a>
+    </template>
+  </div>
+
+  <script>
+    return {
+      init() {
+        fetch(this.filepath)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            this.updates = data.updates;
+          })
+          .catch((error) => {
+            console.error(
+              "There has been a problem with your fetch operation:",
+              error,
+            );
+          });
+      },
+    };
+  </script>
+</template>

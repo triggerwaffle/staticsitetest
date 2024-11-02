@@ -1,8 +1,8 @@
 <template
-   x-component.unwrap="paramtest"
-   x-init="$api && $api.init()"
-   x-data="{params: null}"
-   >
+  x-component.unwrap="paramtest"
+  x-init="$api && $api.init()"
+  x-data="{params: null}"
+>
   <!-- パラメータを表示 -->
   <template x-for="(value, key) in params" :key="key">
     <div>
@@ -10,7 +10,7 @@
       <span x-text="$api.sanitize(value)"></span>
     </div>
   </template>
-   <script>
+  <script>
     return {
       init() {
         const queryString = window.location.search;
@@ -39,5 +39,5 @@
         return temp.innerHTML;
       },
     };
-   </script>
+  </script>
 </template>

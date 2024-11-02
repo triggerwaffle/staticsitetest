@@ -3,11 +3,11 @@
   <head>
     <script src="https://unpkg.com/@vimesh/ui"></script>
     <script src="https://unpkg.com/@vimesh/style" defer></script>
-  <script
-    defer
-    src="https://unpkg.com/alpinejs-head@latest/dist/head.min.js"
-  ></script>
-    
+    <script
+      defer
+      src="https://unpkg.com/alpinejs-head@latest/dist/head.min.js"
+    ></script>
+
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
@@ -17,37 +17,37 @@
   </head>
   <body>
     <script x-data x-head.json type="application/json">
-    {
-    "title": "testpage x",
-    "meta": [
-        {
+      {
+        "title": "testpage x",
+        "meta": [
+          {
             "charset": "utf-8"
-        },
-        {
+          },
+          {
             "name": "description",
             "content": "test portofolio"
-        },
-        {
+          },
+          {
             "name": "googlebot",
             "content": "noindex,nofollow"
-        }
-      ],
-    "links": [
-      {
-        "rel": "icon",
-        "sizes": "16x16",        
-        "href": "./favicon.ico"
-      },
-      {
-        "rel": "stylesheet",
-        "href": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      },
-      {
-        "rel": "stylesheet",
-        "href": "./css/main.css"
+          }
+        ],
+        "links": [
+          {
+            "rel": "icon",
+            "sizes": "16x16",
+            "href": "./favicon.ico"
+          },
+          {
+            "rel": "stylesheet",
+            "href": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          },
+          {
+            "rel": "stylesheet",
+            "href": "./css/main.css"
+          }
+        ]
       }
-    ]
-    }
     </script>
     <div x-data>
       <div x-include.unwrap="./static/nav.html"></div>

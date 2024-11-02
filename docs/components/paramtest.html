@@ -1,7 +1,7 @@
 <template
    x-component.unwrap="paramtest"
    x-init="$api && $api.init()"
-   x-data="{}"
+   x-data="{params: null}"
    >
   <!-- パラメータを表示 -->
   <template x-for="(value, key) in params" :key="key">

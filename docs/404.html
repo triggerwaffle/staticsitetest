@@ -26,6 +26,17 @@
     <script defer src="./js/main_defer.js"></script>
   </head>
   <body>
+    <script x-data x-head.json type="application/json">
+    {
+    "title": "Alpine JS Head - Title",
+    "meta": [
+        {
+            "name": "description",
+            "content": "Alpine JS Head - Description"
+        }
+      ]
+    }
+    </script>
     <div x-data>
       <div x-include.unwrap="./static/nav.html"></div>
       <div x-include.unwrap="./static/404.html"></div>

@@ -48,14 +48,12 @@
 >
    <ul class="space-y-4 sm:mx-auto sm:mb-2 p-4">
      <template x-for="link in links" :key="link.url">
-       <div>
-       <i class="fa-solid fa-check text-green-500"></i>
        <li>
+         <i class="fa-solid fa-check text-green-500"></i>
          <a :href="link.url" class="text-purple-600 text-lg underline">
            <span x-text="link.title" class="ml-2"></span>
          </a>
        </li>
-       </div>
      </template>
    </ul>
 

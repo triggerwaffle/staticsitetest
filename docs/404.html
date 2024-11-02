@@ -27,20 +27,7 @@
   </head>
   <body>
  <script>
-   document.addEventListener('alpine:init', () => {
-     // Alpine.jsのプラグインを初期化
-     window.Alpine.plugin(s);
 
-     // 外部のJSONファイルを読み込む
-     fetch('./assets/head.json')
-       .then(response => response.json())
-       .then(data => {
-         // JSONデータを取得した後、Alpine.jsのheadディレクティブを使用して処理
-         Alpine.store('headData', data);
-         // ここでheadDataを使ってheadセクションを更新する
-       })
-       .catch(error => console.error('Error loading JSON:', error));
-   });
  </script>
     <div x-data>
       <div x-include.unwrap="./static/alpinejshead.html"></div>

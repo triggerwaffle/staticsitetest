@@ -50,7 +50,7 @@
      <template x-for="link in links" :key="link.url">
        <i class="fa-solid fa-check text-green-500"></i>
        <li>
-         <a :href="link.url" class="text-purple-600 text-lg hover:underline">
+         <a :href="link.url" class="text-purple-600 text-lg underline">
            <span x-text="link.title" class="ml-2"></span>
          </a>
        </li>

@@ -20,9 +20,11 @@
     <div x-data>
       <div x-include.unwrap="./static/nav.html"></div>
     </div>
-    <div x-data>
-    <div x-include.unwrap="./static/paramtest.html"></div>
-    </div>
+     <div x-import="paramtest">
+      <vui-paramtest
+        x-data="{}"
+      ></vui-paramtest>
+     </div>
     <hr class="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
     <div x-data>
       <div x-include.unwrap="./static/footer.html"></div>

@@ -16,15 +16,23 @@
              const queryString = window.location.search;
              const urlParams = new URLSearchParams(queryString);
 
-             // URLSearchParamsオブジェクトを使用してパラメータを取得
              urlParams.forEach((value, key) => {
-                 // パラメータをオブジェクトに追加
-                 // キーと値をサニタイズしてから追加
-                 this.params[this.sanitize(key)] = this.sanitize(value);
+                 key = this.sanitize(key);
+                 value = this.sanitize(value);
+                 if (key.endsWith('[]')) {
+                     // 配列として扱う
+                     key = key.slice(0, -2); // '[]'を取り除く
+                     if (!Array.isArray(this.params[key])) {
+                         this.params[key] = []; // 配列を初期化
+                     }
+                     this.params[key].push(value);
+                 } else {
+                     // 通常のパラメータとして扱う
+                     this.params[key] = value;
+                 }
              });
          },
 
-         // サニタイズ関数
          sanitize(content) {
              const temp = document.createElement('div');
              temp.textContent = content;

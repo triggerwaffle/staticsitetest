@@ -8,6 +8,12 @@
     <link rel="icon" sizes="16x16" href="./favicon.ico" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <script src="https://unpkg.com/@vimesh/ui"></script>
     <script src="https://unpkg.com/@vimesh/style" defer></script>
+
+<script
+  defer
+  src="https://unpkg.com/alpinejs-head@latest/dist/head.min.js"
+></script>
+    
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
@@ -21,18 +27,20 @@
   </head>
   <body>
  <script>
-   function loadScript() {
-     // Define the function to load the external script
-     var loadExternalScript = () => {
-       var script = document.createElement('script');
-       script.defer = true;
-       script.src = 'https://unpkg.com/alpinejs-head@latest/dist/head.min.js';
-       document.head.appendChild(script);
-     };
+   document.addEventListener('alpine:init', () => {
+     // Alpine.jsのプラグインを初期化
+     window.Alpine.plugin(s);
 
-     // Listen for a custom event that you'll dispatch after including alpinejshead.html
-     document.addEventListener('alpinejshead:loaded', loadExternalScript);
-   }
+     // 外部のJSONファイルを読み込む
+     fetch('./assets/head.json')
+       .then(response => response.json())
+       .then(data => {
+         // JSONデータを取得した後、Alpine.jsのheadディレクティブを使用して処理
+         Alpine.store('headData', data);
+         // ここでheadDataを使ってheadセクションを更新する
+       })
+       .catch(error => console.error('Error loading JSON:', error));
+   });
  </script>
     <div x-data>
       <div x-include.unwrap="./static/alpinejshead.html" x-init="loadScript()"></div>

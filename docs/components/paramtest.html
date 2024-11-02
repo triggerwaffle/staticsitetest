@@ -16,7 +16,7 @@
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
 
-        urlParams.forEach((value, key) => {
+        /*urlParams.forEach((value, key) => {
           key = this.sanitize(key);
           value = this.sanitize(value);
           if (key.endsWith("[]")) {
@@ -30,7 +30,7 @@
           } else {
             this.params[key] = value;
           }
-        });
+        });*/
       },
 
       sanitize(content) {

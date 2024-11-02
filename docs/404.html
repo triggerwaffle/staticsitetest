@@ -28,20 +28,16 @@
   <body>
  <script>
    function loadScript() {
-     document.addEventListener('alpine:init', () => {
-       Alpine.store('loadScript', () => {
-         var script = document.createElement('script');
-         script.defer = true;
-         script.src = 'https://unpkg.com/alpinejs-head@latest/dist/head.min.js';
-         document.head.appendChild(script);
-       });
-     });
+     // Define the function to load the external script
+     var loadExternalScript = () => {
+       var script = document.createElement('script');
+       script.defer = true;
+       script.src = 'https://unpkg.com/alpinejs-head@latest/dist/head.min.js';
+       document.head.appendChild(script);
+     };
 
-     document.addEventListener('alpine:initialized', () => {
-       Alpine.$nextTick(() => {
-         Alpine.store('loadScript')();
-       });
-     });
+     // Listen for a custom event that you'll dispatch after including alpinejshead.html
+     document.addEventListener('alpinejshead:loaded', loadExternalScript);
    }
  </script>
     <div x-data>

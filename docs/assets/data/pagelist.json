@@ -5,6 +5,10 @@
       "title": "test page"
     },
     {
+      "url": "./paramtest.html",
+      "title": "paramtest page"
+    },
+    {
       "url": "./resume.html",
       "title": "resume page"
     },
@@ -15,10 +19,6 @@
     {
       "url": "./contact.html",
       "title": "contact page"
-    },
-    {
-      "url": "./paramtest.html",
-      "title": "paramtest page"
     },
     {
       "url": "./privacypolicy.html",

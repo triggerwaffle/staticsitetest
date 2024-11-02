@@ -4,7 +4,7 @@
   x-data="{params: null}"
 >
   <!-- パラメータを表示 -->
-  <template x-for="(value, key) in params?" :key="key">
+  <template x-for="(value, key) in params" :key="key">
     <div>
       <span x-text="$api.sanitize(key)"></span>:
       <span x-text="$api.sanitize(value)"></span>

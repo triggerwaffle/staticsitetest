@@ -12,11 +12,10 @@
   </template>
   <script>
     return {
-      params:{},
       init() {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
-
+        this.params={};
         urlParams.forEach((value, key) => {
           key = this.sanitize(key);
           value = this.sanitize(value);

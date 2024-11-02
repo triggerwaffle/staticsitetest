@@ -1,0 +1,29 @@
+ <!-- Alpine.jsのスコープを定義 -->
+ <div x-data="httpParams()" x-init="init()">
+     <!-- パラメータを表示 -->
+     <template x-for="(value, key) in params" :key="key">
+         <div>
+             <span x-text="key"></span>: <span x-text="value"></span>
+         </div>
+     </template>
+ </div>
+
+ <script>
+ function httpParams() {
+     return {
+         params: {},
+
+         init() {
+             const queryString = window.location.search;
+             const urlParams = new URLSearchParams(queryString);
+
+             // URLSearchParamsオブジェクトを使用してパラメータを取得
+             urlParams.forEach((value, key) => {
+                 // パラメータをオブジェクトに追加
+                 // 文字列をHTMLに変換しないため、injectionは発生しない
+                 this.params[key] = value;
+             });
+         }
+     };
+ }
+ </script>

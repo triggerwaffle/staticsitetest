@@ -1,15 +1,14 @@
- <!-- Alpine.jsのスコープを定義 -->
  <div x-data="httpParams()" x-init="init()">
      <!-- パラメータを表示 -->
      <template x-for="(value, key) in params" :key="key">
          <div>
-             <span x-text="key"></span>: <span x-text="value"></span>
+             <span x-text="sanitize(key)"></span>: <span x-text="sanitize(value)"></span>
          </div>
      </template>
  </div>
 
  <script>
-function httpParams() {
+ function httpParams() {
      return {
          params: {},
 
@@ -20,18 +19,16 @@ function httpParams() {
              // URLSearchParamsオブジェクトを使用してパラメータを取得
              urlParams.forEach((value, key) => {
                  // パラメータをオブジェクトに追加
-                 // 文字列をHTMLに変換しないため、injectionは発生しない
-                 this.params[key] = this.sanitize(value);
+                 // キーと値をサニタイズしてから追加
+                 this.params[this.sanitize(key)] = this.sanitize(value);
              });
          },
 
          // サニタイズ関数
-         sanitize(value) {
-             // ここでサニタイズ処理を実装
-             // 例: HTMLタグをエスケープする
-             const div = document.createElement('div');
-             div.textContent = value;
-             return div.innerHTML;
+         sanitize(content) {
+             const temp = document.createElement('div');
+             temp.textContent = content;
+             return temp.innerHTML;
          }
      };
  }

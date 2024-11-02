@@ -1,1 +1,11 @@
-
+<template
+   x-component.unwrap="paramtest"
+   x-init="$api && $api.init()"
+   x-data="{ currentVal: 0}"
+   >
+   <script>
+      return {
+        init() {},
+      };
+   </script>
+</template>

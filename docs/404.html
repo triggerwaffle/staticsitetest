@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <script src="https://unpkg.com/@vimesh/ui"></script>
     <script src="https://unpkg.com/@vimesh/style" defer></script>
 
-<script x-data defer>
-  $head('title', 'Hello World 👋');
-</script>
+
 
     
 <script
@@ -24,7 +22,17 @@
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
 
-
+<script x-data x-head.json type="application/json">
+  {
+    "title": "Alpine JS Head - Title",
+    "meta": [
+      {
+        "name": "description",
+        "content": "Alpine JS Head - Description"
+      }
+    ]
+  }
+</script>
     
     <link rel="stylesheet" type="text/css" href="./css/main.css" />
     <script src="./js/main.js"></script>

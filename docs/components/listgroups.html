@@ -39,3 +39,45 @@
     };
   </script>
 </template>
+
+
+<template
+  x-component.unwrap="simplelistgroup1"
+  x-init="$api && $api.init()"
+  x-data="{filepath: '',links: null}"
+>
+  <ul>
+    <template x-for="link in links" :key="link.url">
+       <!-- Wrap the div with an anchor tag -->
+      <li>
+       <i class="fa-solid fa-check text-green-500"></i>
+       <a :href="link.url" class="">
+           <span class="underline text-cyan-800 ml-2" x-text="link.title"></span>
+       </a>
+      </li>
+    </template>
+  </ul>
+
+  <script>
+    return {
+      init() {
+        fetch(this.filepath)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            this.links = data.links;
+          })
+          .catch((error) => {
+            console.error(
+              "There has been a problem with your fetch operation:",
+              error,
+            );
+          });
+      },
+    };
+  </script>
+</template>

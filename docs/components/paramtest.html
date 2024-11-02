@@ -15,6 +15,7 @@
       init() {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
+        console.log(urlParams);
         this.params={};
         urlParams.forEach((value, key) => {
           key = this.sanitize(key);

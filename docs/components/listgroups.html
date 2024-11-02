@@ -46,12 +46,12 @@
   x-init="$api && $api.init()"
   x-data="{filepath: '',links: null}"
 >
-   <ul class="space-y-4">
+   <ul class="space-y-4 sm:mx-auto sm:mb-2 p-4">
      <template x-for="link in links" :key="link.url">
        <li>
-         <a :href="link.url" class="block p-4 bg-blue-200 rounded-lg hover:bg-blue-300">
+         <a :href="link.url" class="text-purple-600 text-lg hover:underline">
            <i class="fa-solid fa-check text-green-500"></i>
-           <span class="text-purple-500 text-lg underline ml-2" x-text="link.title"></span>
+           <span x-text="link.title" class="ml-2"></span>
          </a>
        </li>
      </template>

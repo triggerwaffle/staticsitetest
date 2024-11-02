@@ -1,6 +1,6 @@
 <template
   x-component.unwrap="paramtest"
-  x-init="$api.init()"
+  x-init="$api && $api.init()"
   x-data="{params: null}"
 >
   <!-- パラメータを表示 -->

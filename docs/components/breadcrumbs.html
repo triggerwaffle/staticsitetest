@@ -50,7 +50,14 @@
 
   <script>
     return {
-      init() {},
+      init() {
+         this.pagesMap = {
+           'home': { displayName: 'Home', url: '/' },
+           'parent': { displayName: 'Parent', url: '/parent' },
+           'current': { displayName: 'Current', url: '/current' },
+           // Add more page mappings as needed
+         };
+      },
     };
   </script>
 </template>

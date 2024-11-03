@@ -82,3 +82,46 @@
     };
   </script>
 </template>
+
+
+
+
+ <template
+   x-component.unwrap="listgroup2"
+   x-init="$api && $api.init()"
+   x-data="{filepath: '',links: null}"
+ >
+   <ul class="space-y-4 sm:mx-auto sm:mb-2 p-4">
+     <template x-for="link in links" :key="link.url">
+       <li>
+         <a :href="link.url" class="block p-4 rounded-lg border-2 border-transparent hover:border-purple-500
+ hover:bg-purple-100 hover:text-purple-500">
+           <span x-text="link.title" class="ml-2"></span>
+         </a>
+       </li>
+     </template>
+   </ul>
+
+   <script>
+    return {
+      init() {
+        fetch(this.filepath)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            this.links = data.links;
+          })
+          .catch((error) => {
+            console.error(
+              "There has been a problem with your fetch operation:",
+              error,
+            );
+          });
+      },
+    };
+   </script>
+ </template>

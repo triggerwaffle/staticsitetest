@@ -97,7 +97,7 @@
          <a :href="link.url" class="block rounded-lg border-2 border-transparent hover:border-purple-900 hover:bg-transparent hover:text-purple-900 p-4 flex justify-between items-center">
            <span x-text="link.title" class="ml-1"></span>
            <!-- Use flex-shrink-0 to prevent the icon from shrinking -->
-           <span class="flex-shrink-0">
+           <span class="flex-shrink-0 ml-auto">
              <!-- Use x-show to conditionally display the correct icon -->
              <i x-show="!link.external" class="fa-solid fa-arrow-right"></i>
              <i x-show="link.external" class="fa-solid fa-arrow-up-right-from-square"></i>

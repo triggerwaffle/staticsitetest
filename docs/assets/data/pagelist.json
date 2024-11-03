@@ -27,6 +27,10 @@
    {
       "url": "./cardgroupexample.html",
       "title": "card group example page"
+    },
+   {
+      "url": "./404.html",
+      "title": "404 page"
     }
     
   ]

@@ -56,10 +56,15 @@
         ]
       }
     </script>
-    <div x-data>
-      <div x-include.unwrap="./static/nav.html"></div>
-      <div x-include.unwrap="./static/contact.html"></div>
-      <div x-include.unwrap="./static/footer.html"></div>
+
+
+    <div x-import="mains">
+      <vui-main1>
+        <div x-data>
+          <div x-include.unwrap="./static/contact.html"></div>
+        </div>
+      </vui-main1>
     </div>
+
   </body>
 </html>

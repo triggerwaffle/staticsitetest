@@ -95,9 +95,9 @@
      <template x-for="link in links" :key="link.url">
        <li>
          <a :href="link.url" class="block w-full rounded-lg border-2 border-transparent hover:border-purple-900
- hover:bg-transparent hover:text-purple-900 p-4">
-           <span x-text="link.title" class="ml-1"></span>
-           <span class="ml-auto">
+ hover:bg-transparent hover:text-purple-900 p-4 flex items-center justify-between">
+           <span x-text="link.title" class=""></span>
+           <span class="">
              <i x-show="!link.external" class="fa-solid fa-arrow-right"></i>
              <i x-show="link.external" class="fa-solid fa-arrow-up-right-from-square"></i>
            </span>

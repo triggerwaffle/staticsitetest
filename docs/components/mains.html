@@ -1,5 +1,12 @@
 <template x-component="main1">
-    <main>
-      <slot></slot>
-    </main>
+
+  <div x-data>
+    <div x-include.unwrap="./static/nav.html"></div>
+  </div>
+  <main>
+    <slot></slot>
+  </main>
+  <div x-data>
+    <div x-include.unwrap="./static/footer.html"></div>
+  </div>
 </template>

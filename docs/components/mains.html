@@ -1,13 +1,13 @@
-<template x-component="main1" x-data="">
-<div class="flex flex-col min-h-screen">
-  <div x-data>
-    <div x-include.unwrap="./static/nav.html"></div>
-  </div>
-  <main class="flex-grow">
-    <slot></slot>
-  </main>
-  <div x-data>
-    <div x-include.unwrap="./static/footer.html"></div>
-  </div>
-</div>
-</template>
+ <template x-component="main1" x-data="">
+ <div class="flex flex-col min-h-screen">
+   <div x-data>
+     <div x-include.unwrap="./static/nav.html"></div>
+   </div>
+   <main class="flex-grow">
+     <slot></slot>
+   </main>
+   <footer class="mt-auto">
+     <div x-include.unwrap="./static/footer.html"></div>
+   </footer>
+ </div>
+ </template>

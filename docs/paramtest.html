@@ -56,15 +56,14 @@
         ]
       }
     </script>
-    <div x-data>
-      <div x-include.unwrap="./static/nav.html"></div>
-    </div>
-     <div x-import="paramtest">
-      <vui-paramtest
-      ></vui-paramtest>
-     </div>
-    <div x-data>
-      <div x-include.unwrap="./static/footer.html"></div>
+
+
+    <div x-import="mains">
+      <vui-main1>
+        <div x-import="paramtest">
+          <vui-paramtest></vui-paramtest>
+        </div>
+      </vui-main1>
     </div>
   </body>
 </html>

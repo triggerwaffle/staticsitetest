@@ -91,11 +91,11 @@
    x-init="$api && $api.init()"
    x-data="{filepath: '',links: null}"
  >
-   <ul class="grid sm:grid-cols-1 lg:grid-cols-3 gap-4 sm:mx-auto sm:mb-2 p-4">
+   <ul class="grid sm:grid-cols-1 lg:grid-cols-3 gap-2 sm:mx-auto sm:mb-1 p-2">
      <template x-for="link in links" :key="link.url">
        <li>
-         <a :href="link.url" class="block p-4 rounded-lg border-2 border-transparent hover:border-purple-500 hover:bg-transparent hover:text-purple-500">
-           <span x-text="link.title" class="ml-2"></span>
+         <a :href="link.url" class="block p-2 rounded-lg border-2 border-transparent hover:border-purple-500 hover:bg-transparent hover:text-purple-500">
+           <span x-text="link.title" class="ml-1"></span>
          </a>
        </li>
      </template>

@@ -29,7 +29,7 @@
      </div>
    </nav>
 
-   <!-- Mobile Menu -->
+   <!-- Menu -->
    <div
      x-show="open"
      @click.away="open = false"
@@ -42,7 +42,7 @@
      x-transition:leave-end="opacity-0 transform scale-95"
    >
      <!-- Mobile menu links -->
-     <div class="" x-import="listgroups">
+     <div x-import="listgroups">
       <vui-simplelistgroup1
         x-data="{filepath: './assets/data/pagelist.json'}"
       ></vui-simplelistgroup1>

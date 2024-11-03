@@ -94,10 +94,12 @@
    <ul class="grid sm:grid-cols-1 lg:grid-cols-3 gap-4 p-4">
      <template x-for="link in links" :key="link.url">
        <li>
-         <a :href="link.url" class="block rounded-lg border-2 border-transparent hover:border-purple-900 hover:bg-transparent hover:text-purple-900 p-4 flex justify-between items-center">
+          <a :href="link.url" class="block rounded-lg border-2 border-transparent hover:border-purple-900 hover:bg-transparent hover:text-purple-900 p-4 flex justify-between items-center">
            <span x-text="link.title" class="ml-1"></span>
-           <i x-show="!link.external" class="fa-solid fa-arrow-right"></i>
-           <i x-show="link.external" class="fa-solid fa-arrow-up-right-from-square"></i>
+           <span class="flex-shrink-0">
+             <i x-show="!link.external" class="fa-solid fa-arrow-right"></i>
+             <i x-show="link.external" class="fa-solid fa-arrow-up-right-from-square"></i>
+           </span>
          </a>
        </li>
      </template>

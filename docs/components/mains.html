@@ -1,12 +1,12 @@
-<template x-component="main1" x-data="">
-   <div class="flex flex-col min-h-screen">
+<template x-component="main1">
+   <div "flex flex-col h-screen justify-between">
       <div x-data>
          <div x-include.unwrap="./static/nav.html"></div>
       </div>
-      <main class="flex-grow">
+      <main class="mb-auto">
          <slot></slot>
       </main>
-      <footer class="mt-auto">
+      <footer>
          <div x-include.unwrap="./static/footer.html"></div>
       </footer>
    </div>

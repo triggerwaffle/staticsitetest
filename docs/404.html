@@ -57,14 +57,14 @@
       }
     </script>
 
-    <div x-data>
-          <div x-import="mains">
-      <vui-main1
-      >testtt</vui-main1>
+
+    <div x-import="mains">
+      <vui-main1>
+        <div x-data>
+          <div x-include.unwrap="./static/404.html"></div>
+        </div>
+      </vui-main1>
     </div>
-      <div x-include.unwrap="./static/nav.html"></div>
-      <div x-include.unwrap="./static/404.html"></div>
-      <div x-include.unwrap="./static/footer.html"></div>
-    </div>
+
   </body>
 </html>

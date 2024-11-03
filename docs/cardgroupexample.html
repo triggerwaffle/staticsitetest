@@ -56,16 +56,18 @@
         ]
       }
     </script>
-    <div x-data>
-      <div x-include.unwrap="./static/nav.html"></div>
-    </div>
+
+
+    <div x-import="mains">
+      <vui-main1>
     <div x-import="cardgroups">
       <vui-cardgroup1
         x-data="{filepath: './assets/data/cardlist1.json'}"
       ></vui-cardgroup1>
     </div>
-    <div x-data>
-      <div x-include.unwrap="./static/footer.html"></div>
+      </vui-main1>
     </div>
+
   </body>
 </html>
+

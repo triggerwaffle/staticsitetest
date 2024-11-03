@@ -13,6 +13,10 @@
     ></script>
     <script src="./js/main.js"></script>
     <script defer src="./js/main_defer.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/viewport-extra@2.1.4/dist/iife/viewport-extra.min.js"
+      async
+   ></script>
   </head>
   <body>
     <script x-data x-head.json type="application/json">
@@ -29,7 +33,11 @@
           {
             "name": "googlebot",
             "content": "noindex,nofollow"
-          }
+          },
+          {
+            "name": "viewport-extra",
+            "content": "width=device-width,initial-scale=1,min-width=375"
+          }      
         ],
         "links": [
           {

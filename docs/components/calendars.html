@@ -141,27 +141,27 @@
   </div>
 
   <script>
-     return {
-       dates: [],
-       init() {
-         this.generateDates();
-       },
-       generateDates() {
-         const today = new Date();
-         const startDay = new Date(today);
-         startDay.setDate(today.getDate() - 3);
+    return {
+      dates: [],
+      init() {
+        this.generateDates();
+      },
+      generateDates() {
+        const today = new Date();
+        const startDay = new Date(today);
+        startDay.setDate(today.getDate() - 3);
 
-         for (let i = 0; i < 7; i++) {
-           const date = new Date(startDay);
-           date.setDate(startDay.getDate() + i);
-           this.dates.push({
-             key: i,
-             dayOfWeek: date.toLocaleDateString('en-US', { weekday: 'short' }),
-             day: date.getDate(),
-             isToday: date.toDateString() === today.toDateString()
-           });
-         }
-       }
-     };
+        for (let i = 0; i < 7; i++) {
+          const date = new Date(startDay);
+          date.setDate(startDay.getDate() + i);
+          this.dates.push({
+            key: i,
+            dayOfWeek: date.toLocaleDateString("en-US", { weekday: "short" }),
+            day: date.getDate(),
+            isToday: date.toDateString() === today.toDateString(),
+          });
+        }
+      },
+    };
   </script>
 </template>

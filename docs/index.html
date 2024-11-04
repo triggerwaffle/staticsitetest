@@ -99,7 +99,11 @@
 </section>
 
 
-
+        <div x-import="calendars">
+          <vui-calendar1
+            x-data="{filepath: './assets/data/updatelist.json'}"
+          ></vui-calendar1>
+        </div>
         
         <div x-import="updategroups">
           <vui-updategroup1

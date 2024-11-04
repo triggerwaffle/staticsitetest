@@ -1,6 +1,6 @@
 <template
   x-component.unwrap="calendar1"
-  x-init="$api.init()"
+  x-init="$api && $api.init()"
   x-data="$api.app()"
 >
   <div>

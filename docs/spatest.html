@@ -19,8 +19,12 @@
     <script
       src="https://cdn.jsdelivr.net/npm/viewport-extra@2.1.4/dist/iife/viewport-extra.min.js"
       async
-   ></script>
-    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/sakura.css/css/sakura.css"
+      media="screen"
+    />
     <!--<link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/luxacss@latest/dist/compressed/luxa.min.css"
@@ -32,92 +36,92 @@
 		/>-->
   </head>
 
-    <script x-data x-head.json type="application/json">
-      {
-        "title": "testpage x",
-        "meta": [
-          {
-            "charset": "utf-8"
-          },
-          {
-            "name": "description",
-            "content": "test portofolio"
-          },
-          {
-            "name": "googlebot",
-            "content": "noindex,nofollow"
-          },
-          {
-            "name": "viewport-extra",
-            "content": "width=device-width,initial-scale=1,min-width=375"
-          }      
-        ],
-        "links": [
-          {
-            "rel": "icon",
-            "sizes": "16x16",
-            "href": "./favicon.ico"
-          },
-          {
-            "rel": "stylesheet",
-            "href": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-          }
-        ]
-      }
-    </script>
-	
+  <script x-data x-head.json type="application/json">
+    {
+      "title": "testpage x",
+      "meta": [
+        {
+          "charset": "utf-8"
+        },
+        {
+          "name": "description",
+          "content": "test portofolio"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex,nofollow"
+        },
+        {
+          "name": "viewport-extra",
+          "content": "width=device-width,initial-scale=1,min-width=375"
+        }
+      ],
+      "links": [
+        {
+          "rel": "icon",
+          "sizes": "16x16",
+          "href": "./favicon.ico"
+        },
+        {
+          "rel": "stylesheet",
+          "href": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        }
+      ]
+    }
+  </script>
+
   <body>
     <a href="/"
       ><img
         src="/pinecone-router-readme-transparent.png"
         class="max-w-xs mx-auto"
     /></a>
-      <div>
-        <h1 class="font-bold text-lg mb-6">Pinecone Router Usage Examples</h1>
+    <div>
+      <h1 class="font-bold text-lg mb-6">Pinecone Router Usage Examples</h1>
 
-        <!-- Routes -->
+      <!-- Routes -->
 
-        <!-- Homepage -->
-        <template x-route="/">
-          <!-- inline template, under the hood it inserts an x-if that shows when the route is matched -->
-          <div class="links">
-            <a href="/hello">Hello World</a>
-            <a href="/home2">home2</a>
-            <a href="/home2">home2</a>
-            <a href="/hello/name">Hello World test</a>
-            <a href="/hello/twrewqrw">Hello World test</a>
-            <a href="/test">A non-existing route</a>
-            <a href="/handler">x-handler examples</a>
-            <a href="/target">x-template.target example</a>
+      <!-- Homepage -->
+      <template x-route="/">
+        <!-- inline template, under the hood it inserts an x-if that shows when the route is matched -->
+        <div class="links">
+          <a href="/hello">Hello World</a>
+          <a href="/home2">home2</a>
+          <a href="/home2">home2</a>
+          <a href="/hello/name">Hello World test</a>
+          <a href="/hello/twrewqrw">Hello World test</a>
+          <a href="/test">A non-existing route</a>
+          <a href="/handler">x-handler examples</a>
+          <a href="/target">x-template.target example</a>
 
-            <table>
-              <tr>
-                <th>Company</th>
-                <th>Contact</th>
-                <th>Country</th>
-              </tr>
-              <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-              </tr>
-              <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td>Mexico</td>
-              </tr>
-            </table>
-          </div>
-        </template>
+          <table>
+            <tr>
+              <th>Company</th>
+              <th>Contact</th>
+              <th>Country</th>
+            </tr>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Centro comercial Moctezuma</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+            </tr>
+          </table>
+        </div>
+      </template>
 
-        <template x-route="/home2">
-          <div>Hello World! home2</div>
-        </template>
+      <template x-route="/home2">
+        <div>Hello World! home2</div>
+      </template>
 
-        <template x-route="/hello/:name">
-          <div>Hello <span x-text="$router.params.name"></span></div>
-        </template>
-      </div>
+      <template x-route="/hello/:name">
+        <div>Hello <span x-text="$router.params.name"></span></div>
+      </template>
+    </div>
 
     <div id="app"></div>
 

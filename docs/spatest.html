@@ -80,7 +80,7 @@
       <h1 class="font-bold text-lg mb-6">Pinecone Router Usage Examples</h1>
 
       <!-- Routes -->
-
+    <div id="main" x-data>
       <!-- Homepage -->
       <template x-route="/">
         <!-- inline template, under the hood it inserts an x-if that shows when the route is matched -->
@@ -122,7 +122,7 @@
         <div>Hello <span x-text="$router.params.name"></span></div>
       </template>
     </div>
-
+    </div>
     <div id="app"></div>
 
     <script>
